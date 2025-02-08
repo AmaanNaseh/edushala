@@ -6,7 +6,7 @@
 
 ## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
 
-<!-- ## Youtube Video: <a href="" target="_blank" ></a> -->
+## Youtube Video: <a href="https://youtu.be/_jCDPb56rGI" target="_blank" >https://youtu.be/\_jCDPb56rGI</a>
 
 ## Features:
 
@@ -26,9 +26,9 @@
 
 ## Steps to run this project:
 
-<!-- ### Check the video 11:52 here: 👉 <a href="" target="_blank" ></a> -->
+#### Check the video 11:52 here: <a href="https://youtu.be/_jCDPb56rGI?si=Scb1t1v1tLoGFtzx&t=712" target="_blank" >Setup Guide</a>
 
-Note: Make sure you have installed <a href="https://git-scm.com/downloads" target="_blank" >Git</a>, <a href="https://code.visualstudio.com/download" target="_blank" >VS Code</a>, <a href="https://nodejs.org/en/download" target="_blank" >Node.js</a> and <a href="https://www.python.org/downloads/release/python-3116/" target="_blank" >Python (3.11.6 Recommended)</a> in your system
+#### Note: Make sure you have installed <a href="https://git-scm.com/downloads" target="_blank" >Git</a>, <a href="https://code.visualstudio.com/download" target="_blank" >VS Code</a>, <a href="https://nodejs.org/en/download" target="_blank" >Node.js</a> and <a href="https://www.python.org/downloads/release/python-3116/" target="_blank" >Python (3.11.6 Recommended)</a> in your system
 
 ### 1. Clone the repository:
 

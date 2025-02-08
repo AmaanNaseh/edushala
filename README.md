@@ -6,7 +6,27 @@
 
 ## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
 
+<!-- ## Youtube Video: <a href="" target="_blank" ></a> -->
+
+## Features:
+
+- Learning Management System
+- Digital Library
+- Gamified Learning
+- AI based Digital Attendance System
+- AI based Special Education for disabled students : Sign Language Tutorials
+- AI based Quiz Score Analysis System
+- AI based Assignment/Questions Generator
+- EduSathi : AI doubt solver chatbot
+- Score & CGPA Analyzer
+- Personalized Dashboard
+- Adaptive Quizzes & Time Management System
+- Offline Installation
+- Accessibility & Shortcuts : Bi-Lingual (Hindi/English), Smart Cursor Navigation, Screen Reader, Screen Magnifier, Voice to Text & Digital Orbit Writer
+
 ## Steps to run this project:
+
+<!-- ### Check the video 11:52 here: 👉 <a href="" target="_blank" ></a> -->
 
 Note: Make sure you have installed <a href="https://git-scm.com/downloads" target="_blank" >Git</a>, <a href="https://code.visualstudio.com/download" target="_blank" >VS Code</a>, <a href="https://nodejs.org/en/download" target="_blank" >Node.js</a> and <a href="https://www.python.org/downloads/release/python-3116/" target="_blank" >Python (3.11.6 Recommended)</a> in your system
 

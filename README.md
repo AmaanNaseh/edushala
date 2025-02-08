@@ -6,7 +6,7 @@
 
 ## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
 
-## Youtube Video: <a href="https://youtu.be/_jCDPb56rGI" target="_blank" >https://youtu.be/\_jCDPb56rGI</a>
+## Youtube Video: [https://youtu.be/\_jCDPb56rGI](https://youtu.be/_jCDPb56rGI)
 
 ## Features:
 

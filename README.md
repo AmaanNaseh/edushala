@@ -2,7 +2,7 @@
 
 ## Tech stack
 
-![Image](https://github.com/user-attachments/assets/707b6319-b1aa-43fc-b62e-9f0e73b17fac)
+![Image](https://github.com/user-attachments/assets/37ac02f2-cf9a-4a3a-bf1e-7243e067cf7a)
 
 ## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
 

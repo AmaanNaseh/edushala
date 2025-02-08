@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Score Analysis</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Score Analysis</h1>
+
+        <form method="POST" class="quiz__form" action="/predict">
+            <label for="score">Enter your score:</label>
+            <input type="number" name="score" id="score" step="0.1" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if prediction %}
+        <h2>Prediction: <span
+                class="prediction__value {% if prediction == 'Weak' %}weak{% elif prediction == 'Average' %}average{% elif prediction == 'Strong' %}strong{% endif %}">
+                {{prediction }}</span></h2>
+
+
+        {% if prediction == 'Weak' %}
+        <div class="suggestions__container">
+            <h3>Personalized suggestions</h3>
+            <ul>
+                <li>Strengthen the basics and be consistent to study daily.</li>
+                <li>Make sure to write down everything you feel is important</li>
+                <li>Atleast solve 15 questions per subject everyday (refer to our question/assignment generator feature)
+                </li>
+                <li>Prepare and follow a strict study schedule, atleast 3 hours/day (refer to our time management
+                    feature)
+                </li>
+                <li>Set a mini goal everyday to achieve</li>
+            </ul>
+        </div>
+        {% elif prediction == 'Average' %}
+        <div class="suggestions__container">
+            <h3>Personalized suggestions</h3>
+            <ul>
+                <li>Revise everything before starting to study everyday</li>
+                <li>Try to take short breaks but do not break the momentum</li>
+                <li>Try to increase difficulty of questions you practice everyday</li>
+                <li>Attempt atleast 25 questions per subject everyday (refer to our question/assignment generator
+                    feature)</li>
+                <li>Focus on understanding more about concepts and practice questions on each learnt concept immediately
+                </li>
+                <li>Prepare and follow a strict study schedule, atleast 4 hours/day (refer to our time management
+                    feature)
+                </li>
+            </ul>
+        </div>
+        {% elif prediction == 'Strong' %}
+        <div class="suggestions__container">
+            <h3>Personalized suggestions</h3>
+            <ul>
+                <li>Do not get overconfident !!! Revise everything before starting to study everyday</li>
+                <li>Try to take short breaks but do not break the momentum</li>
+                <li>Try to increase difficulty of questions you practice everyday</li>
+                <li>Attempt atleast 35 questions per subject everyday (refer to our question/assignment generator
+                    feature)</li>
+                </li>
+                <li>Prepare and follow a strict study schedule, atleast 5 hours/day (refer to our time management
+                    feature)
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
+</body>
+
+</html>

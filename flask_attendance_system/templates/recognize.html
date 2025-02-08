@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Face Recognition</title>
+
+</head>
+
+<body>
+    <div class="centre__container">
+        <h1 class="title">Attendance by Face Recognition</h1>
+
+        <img class="video__stream" src="{{ url_for('video_feed') }}" id="video_feed" alt="Video Stream">
+
+
+        <br>
+        <div class="capture__container">
+            <button class="hero__btn" id="markAttendance">Mark Attendance</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const markAttendanceButton = document.getElementById("markAttendance");
+
+            markAttendanceButton.addEventListener("click", function () {
+                fetch("/mark_attendance", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        if (data.status === "success") {
+                            markAttendanceButton.disabled = true;
+                            markAttendanceButton.textContent = "Attendance Marked";
+                        }
+                    })
+                    .catch(error => console.error("Error:", error));
+            });
+        });
+    </script>
+</body>
+
+</html>

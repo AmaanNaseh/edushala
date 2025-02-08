@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+.title {
+  color: #2563eb;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.centre__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.registration__form {
+  margin: 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.registration__form input {
+  border: solid 2px black;
+  padding: 8px 10px;
+  background-color: #f2f6fe;
+}
+
+.registration__form label {
+  font-weight: 600;
+  font-size: larger;
+}
+
+.hero__btn {
+  padding: 10px 16px;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+}
+
+.hero__btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: #4a7eee;
+}
+
+.video__stream {
+  width: 300px;
+  height: 300px;
+}
+
+.capture__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+table {
+  border-spacing: 4px;
+  margin: 10px;
+}
+
+table tr,
+td {
+  min-width: 35px;
+  padding: 4px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .video__stream {
+    width: 500px;
+    height: 400px;
+  }
+
+  .registration__form {
+    flex-direction: row;
+  }
+
+  table {
+    border-spacing: 8px;
+  }
+
+  table tr,
+  td {
+    min-width: 75px;
+    padding: 10px;
+    text-align: center;
+  }
+}

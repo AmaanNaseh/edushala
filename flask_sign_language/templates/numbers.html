@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical Sign Language</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Numerical Sign Language</h1>
+
+        <div class="image__container">
+            <img src="" alt="..." id="numberImg">
+        </div>
+
+        <div class="video__container">
+            <img src="/video_feed_numbers" alt="Video Feed">
+        </div>
+    </div>
+
+    <h1>Predicted Result: <span id="predictionResult">Unknown</span></h1>
+
+    <script>
+        // Number Image Handling
+        var numIndex = 0; // Keeps track of the number index (0 to 9)
+        var numCount = 0; // Count for correct predictions for numbers
+
+        // Function to change the number image
+        const changeNumberImage = () => {
+            var numberImages = [
+                "../static/assets/0.jpg",
+                "../static/assets/1.jpg",
+                "../static/assets/2.jpg",
+                "../static/assets/3.jpg",
+                "../static/assets/4.jpg",
+                "../static/assets/5.jpg",
+                "../static/assets/6.jpg",
+                "../static/assets/7.jpg",
+                "../static/assets/8.jpg",
+                "../static/assets/9.jpg",
+            ];
+
+            var numberImage = document.getElementById("numberImg");
+            numberImage.src = numberImages[numIndex];
+        };
+
+        // Function to fetch the prediction for numbers
+        function fetchPrediction() {
+            fetch('/get_prediction')  // Fetch the prediction from the Flask server
+                .then(response => response.json())
+                .then(data => {
+                    // Update the prediction result dynamically in the DOM
+                    var predictedResult = data.predicted_result || 'Unknown';
+                    document.getElementById('predictionResult').innerText = predictedResult;
+
+                    // For Numbers: Check if prediction matches the current number image
+                    var currentNumber = numIndex.toString(); // Convert to string to match prediction
+                    if (predictedResult === currentNumber) {
+                        numCount++; // Increase count for number matches
+                        numIndex++; // Move to next number in sequence
+                        if (numIndex > 9) numIndex = 0; // Reset to 0 after 9
+                        changeNumberImage(); // Show next number image
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching prediction:', error);
+                    document.getElementById('predictionResult').innerText = 'Error';
+                });
+        }
+
+        // Display the first image on page load (number 0)
+        window.onload = () => {
+            changeNumberImage(); // Display the first number image (0)
+        };
+
+        // Fetch prediction every 1 second
+        setInterval(fetchPrediction, 1000);
+    </script>
+</body>
+
+</html>

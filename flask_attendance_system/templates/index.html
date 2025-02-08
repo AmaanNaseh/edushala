@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Smart Attendance System</title>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <h1 class="title">Smart Attendance System</h1>
+
+    <div class="centre__container">
+        <form class="registration__form" id="registerForm">
+            <label>Name:</label>
+            <input type="text" id="name" required><br>
+            <label>Roll Number:</label>
+            <input type="text" id="rollNumber" required><br>
+            <label>Class:</label>
+            <input type="text" id="class" required><br>
+            <button class="hero__btn" type="submit">Register</button>
+        </form>
+    </div>
+
+    <div class="centre__container">
+        <h2>Live Video Feed</h2>
+        <img class="video__stream" src="/capture_feed" alt="Video Feed">
+    </div>
+
+    <div class="capture__container">
+        <button class="hero__btn" onclick="captureImages()">Capture Images</button>
+        <button class="hero__btn" onclick="trainModel()">Save data & train AI model</button>
+    </div>
+
+    <div class="centre__container">
+        <button class="hero__btn" onclick="openRecognitionTab()">Record Attendance</button>
+        <a href="/view-attendance">
+            <button class="hero__btn">View Attendance</button>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const rollNumber = document.getElementById("rollNumber").value;
+            const studentClass = document.getElementById("class").value;
+
+            fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, roll_number: rollNumber, class: studentClass })
+            }).then(res => res.json()).then(data => alert(data.message));
+        });
+
+        function captureImages() {
+            const name = document.getElementById("name").value;
+            fetch('/capture_images', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name })
+            }).then(res => res.json()).then(data => alert(data.message));
+        }
+
+        function trainModel() {
+            alert("Started training don't click anywhere or do anything until it is done !!!")
+            fetch('/train', { method: 'POST' })
+                .then(res => res.json())
+                .then(data => alert(data.message));
+        }
+
+        function openRecognitionTab() {
+            window.location.href = '/recognize';
+        }
+    </script>
+</body>
+
+</html>

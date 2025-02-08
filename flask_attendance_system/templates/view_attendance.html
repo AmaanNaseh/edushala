@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>View Attendance</title>
+</head>
+
+<body>
+    <h1 class="title">Attendance Records</h1>
+
+    <div class="centre__container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Class</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in attendance_data %}
+                <tr>
+                    <td>{{ row['Name'] }}</td>
+                    <td>{{ row['Roll Number'] }}</td>
+                    <td>{{ row['Class'] }}</td>
+                    <td>{{ row['Timestamp'].split(' ')[0] }}</td> <!-- Extract Date -->
+                    <td>{{ row['Timestamp'].split(' ')[1] }}</td> <!-- Extract Time -->
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+    <script>
+        function fetchAttendance() {
+            fetch('/get_attendance')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('attendanceTable');
+                    tableBody.innerHTML = '';
+
+                    data.forEach(record => {
+                        const row = `<tr>
+                            <td>${record.name}</td>
+                            <td>${record.roll_number}</td>
+                            <td>${record.class}</td>
+                            <td>${record.date}</td>
+                            <td>${record.time}</td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error('Error fetching attendance:', error));
+        }
+
+        window.onload = fetchAttendance;
+    </script>
+</body>
+
+</html>

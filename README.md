@@ -1,4 +1,4 @@
-# EDUSHALA ![Image](https://github.com/user-attachments/assets/f7baeb60-1899-4aa2-a393-3e1eee85c9db)
+# EDUSHALA ![Image](https://github.com/user-attachments/assets/f5f79d68-abb5-4ad1-bffa-3589c40eda70)
 
 ## Tech stack
 

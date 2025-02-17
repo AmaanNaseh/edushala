@@ -2,9 +2,13 @@
 
 A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
-## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
+## Live Website:
 
-## Youtube Video: [https://youtu.be/\_jCDPb56rGI](https://youtu.be/_jCDPb56rGI)
+<a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
+
+## Youtube Video:
+
+[https://youtu.be/\_jCDPb56rGI](https://youtu.be/_jCDPb56rGI)
 
 ## Developers:
 

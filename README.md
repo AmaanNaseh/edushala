@@ -10,8 +10,8 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## HackJMI25 Winners
 
-<a href="https://hackjmi2025.devfolio.co/projects?show_winners=true" target="_blank" > 1st Prize </a>
-<a href="https://devfolio.co/projects/edushala-adaptive-and-aieducational-platform-875e" target="_blank" >Devfolio Repo</a>
+- <a href="https://hackjmi2025.devfolio.co/projects?show_winners=true" target="_blank" > 1st Prize </a>
+- <a href="https://devfolio.co/projects/edushala-adaptive-and-aieducational-platform-875e" target="_blank" >Devfolio Repo</a>
 
 ![Image](https://github.com/user-attachments/assets/9afdc029-194b-4e22-b404-3f8ff00f4dfa)
 

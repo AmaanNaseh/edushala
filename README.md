@@ -8,6 +8,12 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 - <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Abdul Waheed Al Faaiz</a>
 - <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Mudassir Ahmed Khan</a>
 
+## <a href="https://hackjmi2025.devfolio.co/projects?show_winners=true" target="_blank" >HackJMI25 Winners (1st Prize)</a>
+
+<a href="https://devfolio.co/projects/edushala-adaptive-and-aieducational-platform-875e" target="_blank" >Devfolio Repo</a>
+
+![Image](https://github.com/user-attachments/assets/9afdc029-194b-4e22-b404-3f8ff00f4dfa)
+
 ## Tech stack
 
 ![Image](https://github.com/user-attachments/assets/ffa2803e-1077-4a5a-ab10-43d33d23d00f)

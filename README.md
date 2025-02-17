@@ -1,5 +1,13 @@
 # ![Image](https://github.com/user-attachments/assets/f5f79d68-abb5-4ad1-bffa-3589c40eda70) EDUSHALA
 
+A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
+
+## Developers:
+
+- <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/534d15d9-ee90-46ee-9edc-24cae3069452) Amaan Naseh</a>
+- <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/534d15d9-ee90-46ee-9edc-24cae3069452) Abdul Waheed Al Faaiz</a>
+- <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/534d15d9-ee90-46ee-9edc-24cae3069452) Mudassir Ahmed Khan</a>
+
 ## Tech stack
 
 ![Image](https://github.com/user-attachments/assets/ffa2803e-1077-4a5a-ab10-43d33d23d00f)

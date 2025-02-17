@@ -213,3 +213,8 @@ npm run dev
 ![Image](https://github.com/user-attachments/assets/4900a3fd-5379-4df6-9d6b-aa24fdd92439)
 ![Image](https://github.com/user-attachments/assets/c6b41f00-3cd4-4c1e-9ec2-e32510e9cf4f)
 ![Image](https://github.com/user-attachments/assets/38f2e42b-d5f4-4f1c-acf2-db80ad70a921)
+
+## Attributions of code inspirations
+
+- <a href="https://github.com/computervisioneng/sign-language-detector-python" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) computervisioneng (Copyright (c) 2023 Computer vision developer)</a>
+- https://learn.pantechsolutions.net/

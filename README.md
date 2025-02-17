@@ -12,9 +12,15 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## Developers:
 
+<div style="display: flex; flex-wrap: wrap; align-items: center;">
 - <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Amaan Naseh</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center;">
 - <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Abdul Waheed Al Faaiz</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center;">
 - <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Mudassir Ahmed Khan</a>
+</div>
 
 ## HackJMI25 Winners
 

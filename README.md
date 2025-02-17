@@ -4,9 +4,9 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## Developers:
 
-- <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/534d15d9-ee90-46ee-9edc-24cae3069452) Amaan Naseh</a>
-- <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/534d15d9-ee90-46ee-9edc-24cae3069452) Abdul Waheed Al Faaiz</a>
-- <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/534d15d9-ee90-46ee-9edc-24cae3069452) Mudassir Ahmed Khan</a>
+- <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Amaan Naseh</a>
+- <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Abdul Waheed Al Faaiz</a>
+- <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Mudassir Ahmed Khan</a>
 
 ## Tech stack
 

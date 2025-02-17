@@ -2,6 +2,8 @@
 
 A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
+![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC%204.0-brightgreen)
+
 ## Live Website:
 
 <a href="https://edushala.vercel.app" target="_blank" >![Image](https://github.com/user-attachments/assets/a459357e-036f-4f03-b56b-c0503fb5037a) https://edushala.vercel.app</a>

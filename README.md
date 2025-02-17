@@ -2,7 +2,7 @@
 
 ## Tech stack
 
-![Image](https://github.com/user-attachments/assets/37ac02f2-cf9a-4a3a-bf1e-7243e067cf7a)
+![Image](https://github.com/user-attachments/assets/ddbcd5cd-ff6b-4225-ad83-f757dd75c0d3)
 
 ## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
 
@@ -182,6 +182,9 @@ npm run dev
 ![Image](https://github.com/user-attachments/assets/017e9f9b-2154-4816-8e07-9efa17011aad)
 ![Image](https://github.com/user-attachments/assets/49500737-9b8a-41e4-bd9e-ccb93c994cac)
 ![Image](https://github.com/user-attachments/assets/64a38514-5e07-424e-a5ea-fe9398b9631a)
+![Image](https://github.com/user-attachments/assets/74556177-bffa-4d96-a031-ae5979d6907f)
+![Image](https://github.com/user-attachments/assets/0915062f-8c29-4d97-bb4f-8e1aa76d9a67)
+![Image](https://github.com/user-attachments/assets/44127040-e5c4-4ff9-91dc-93f334de29f3)
 ![Image](https://github.com/user-attachments/assets/4900a3fd-5379-4df6-9d6b-aa24fdd92439)
 ![Image](https://github.com/user-attachments/assets/c6b41f00-3cd4-4c1e-9ec2-e32510e9cf4f)
 ![Image](https://github.com/user-attachments/assets/38f2e42b-d5f4-4f1c-acf2-db80ad70a921)

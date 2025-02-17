@@ -1,8 +1,7 @@
 # ![Image](https://github.com/user-attachments/assets/f5f79d68-abb5-4ad1-bffa-3589c40eda70) EDUSHALA
 
 A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
-
-![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC%204.0-brightgreen)
+<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" >![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC%204.0-brightgreen) </a>
 
 ## Live Website:
 

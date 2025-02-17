@@ -2,6 +2,10 @@
 
 A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
+## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
+
+## Youtube Video: [https://youtu.be/\_jCDPb56rGI](https://youtu.be/_jCDPb56rGI)
+
 ## Developers:
 
 - <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Amaan Naseh</a>
@@ -14,14 +18,6 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 - <a href="https://devfolio.co/projects/edushala-adaptive-and-aieducational-platform-875e" target="_blank" >Devfolio Repo</a>
 
 ![Image](https://github.com/user-attachments/assets/9afdc029-194b-4e22-b404-3f8ff00f4dfa)
-
-## Tech stack
-
-![Image](https://github.com/user-attachments/assets/ffa2803e-1077-4a5a-ab10-43d33d23d00f)
-
-## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
-
-## Youtube Video: [https://youtu.be/\_jCDPb56rGI](https://youtu.be/_jCDPb56rGI)
 
 ## Features:
 
@@ -38,6 +34,10 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 - Adaptive Quizzes & Time Management System
 - Offline Installation
 - Accessibility & Shortcuts : Bi-Lingual (Hindi/English), Smart Cursor Navigation, Screen Reader, Screen Magnifier, Voice to Text & Digital Orbit Writer
+
+## Tech stack
+
+![Image](https://github.com/user-attachments/assets/ffa2803e-1077-4a5a-ab10-43d33d23d00f)
 
 ## Steps to run this project:
 

@@ -54,12 +54,13 @@ def generate_frames(model, labels):
         if final_images.multi_hand_landmarks:
             for hand_landmarks in final_images.multi_hand_landmarks:
                 mp_drawing.draw_landmarks(
-                    frame,
-                    hand_landmarks,
-                    mp_hands.HAND_CONNECTIONS,
-                    mp_drawing_styles.get_default_hand_landmarks_style(),
-                    mp_drawing_styles.get_default_hand_connections_style()
-                )
+                frame,
+                hand_landmarks,
+                mp_hands.HAND_CONNECTIONS,
+                mp_drawing.DrawingSpec(color=(255, 255, 255), thickness=2, circle_radius=2),  # Blue color
+                mp_drawing.DrawingSpec(color=(201, 116, 22), thickness=2)  # Blue for connections
+            )
+
 
                 # Extract landmarks and normalize them
                 main_data = []
@@ -86,8 +87,8 @@ def generate_frames(model, labels):
                     x2 = int(max(x_) * width) + 10
                     y2 = int(max(y_) * height) + 10
 
-                    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 128, 0), 4)
-                    cv2.putText(frame, predicted_result, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 3,
+                    cv2.rectangle(frame, (x1, y1), (x2, y2), (201, 116, 22), 4)
+                    cv2.putText(frame, predicted_result, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (255, 255, 255), 3,
                                 cv2.LINE_AA)
 
         ret, buffer = cv2.imencode('.jpg', frame)

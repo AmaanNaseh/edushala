@@ -44,6 +44,7 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 - Adaptive Quizzes & Time Management System
 - Offline Installation
 - Accessibility & Shortcuts : Bi-Lingual (Hindi/English), Smart Cursor Navigation, Screen Reader, Screen Magnifier, Voice to Text & Digital Orbit Writer
+- EduTypeVision : Hardware for blind people to access our website easily & use our digital orbit writer
 
 ## Tech stack
 

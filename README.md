@@ -1,8 +1,8 @@
-# EDUSHALA
+# EDUSHALA ![Image](https://github.com/user-attachments/assets/f7baeb60-1899-4aa2-a393-3e1eee85c9db)
 
 ## Tech stack
 
-![Image](https://github.com/user-attachments/assets/ddbcd5cd-ff6b-4225-ad83-f757dd75c0d3)
+![Image](https://github.com/user-attachments/assets/ffa2803e-1077-4a5a-ab10-43d33d23d00f)
 
 ## Live Website: <a href="https://edushala.vercel.app" target="_blank" >https://edushala.vercel.app</a>
 

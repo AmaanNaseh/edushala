@@ -10,7 +10,7 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## Youtube Video:
 
-<a href="https://youtu.be/\_jCDPb56rGI" target="_blank" >![Image](https://github.com/user-attachments/assets/c1a02cc8-8d95-4c74-bfcb-11db63b143d0) https://youtu.be/\_jCDPb56rGI</a>
+<a href="https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_" target="_blank" >![Image](https://github.com/user-attachments/assets/c1a02cc8-8d95-4c74-bfcb-11db63b143d0) https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_</a>
 
 ## Developers:
 

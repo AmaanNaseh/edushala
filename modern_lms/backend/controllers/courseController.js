@@ -69,7 +69,6 @@ const getCourseById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Validate if the ID is a valid MongoDB ObjectId
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ message: "Invalid course ID" });
     }
@@ -79,37 +78,13 @@ const getCourseById = async (req, res) => {
       return res.status(404).json({ message: "Course not found" });
     }
 
-    res.status(200).json(course);
+    // Check if the logged-in user is enrolled
+    const isEnrolled = course.purchasedBy.includes(req.user.userId);
+
+    res.status(200).json({ ...course.toObject(), isEnrolled });
   } catch (error) {
     console.error("Error fetching course by ID:", error);
     res.status(500).json({ message: "Failed to fetch course details" });
-  }
-};
-
-// ✅ Purchase a Course
-const purchaseCourse = async (req, res) => {
-  try {
-    const { courseId } = req.body;
-    const userId = req.user.userId;
-
-    const course = await CourseModel.findById(courseId);
-    if (!course) {
-      return res.status(404).json({ message: "Course not found" });
-    }
-
-    // Check if user already purchased the course
-    if (course.purchasedBy.includes(userId)) {
-      return res
-        .status(400)
-        .json({ message: "You have already purchased this course." });
-    }
-
-    course.purchasedBy.push(userId);
-    await course.save();
-
-    res.status(200).json({ message: "Course purchased successfully" });
-  } catch (error) {
-    res.status(500).json({ message: "Failed to purchase course" });
   }
 };
 
@@ -159,12 +134,74 @@ const deleteCourse = async (req, res) => {
   }
 };
 
+const getMyCourses = async (req, res) => {
+  try {
+    const userId = req.user.userId;
+    const myCourses = await CourseModel.find({ purchasedBy: userId });
+    res.status(200).json(myCourses);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch enrolled courses" });
+  }
+};
+
+// ✅ Enroll in a Course
+const enrollInCourse = async (req, res) => {
+  try {
+    const { courseId } = req.body;
+    const userId = req.user.userId;
+
+    const course = await CourseModel.findById(courseId);
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    if (course.purchasedBy.includes(userId)) {
+      return res.status(400).json({ message: "Already enrolled." });
+    }
+
+    course.purchasedBy.push(userId);
+    await course.save();
+
+    res.status(200).json({ message: "Enrolled successfully!" });
+  } catch (error) {
+    res.status(500).json({ message: "Enrollment failed" });
+  }
+};
+
+// ✅ Unenroll from a Course
+const unenrollFromCourse = async (req, res) => {
+  try {
+    const { courseId } = req.body;
+    const userId = req.user.userId;
+
+    const course = await CourseModel.findById(courseId);
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    if (!course.purchasedBy.includes(userId)) {
+      return res.status(400).json({ message: "Not enrolled in this course." });
+    }
+
+    course.purchasedBy = course.purchasedBy.filter(
+      (id) => id.toString() !== userId
+    );
+    await course.save();
+
+    res.status(200).json({ message: "Unenrolled successfully!" });
+  } catch (error) {
+    res.status(500).json({ message: "Unenrollment failed" });
+  }
+};
+
 module.exports = {
   addCourse,
   getAdminCourses,
   getAllCourses,
-  purchaseCourse,
   updateCourse,
   deleteCourse,
   getCourseById,
+  getMyCourses,
+  enrollInCourse,
+  unenrollFromCourse,
 };

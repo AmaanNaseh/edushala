@@ -45,7 +45,7 @@ const UpdateCourse = () => {
   };
 
   const addLecture = (moduleIndex) => {
-    const linkRegex = /^(youtu|youtube)/;
+    const linkRegex = /^(http|https|youtu)/;
     if (!linkRegex.test(newLecture.videoLink)) {
       alert(
         "Youtube Video link must be valid i.e. https://youtu.be/... or https://youtube.com/..."
@@ -167,7 +167,7 @@ const UpdateCourse = () => {
                       videoLink: e.target.value,
                     })
                   }
-                  placeholder="Video Link"
+                  placeholder="Youtube Video Link Only"
                   className="border border-gray-300 p-3 rounded-md flex-grow"
                 />
                 <button

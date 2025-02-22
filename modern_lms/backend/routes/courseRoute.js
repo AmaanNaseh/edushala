@@ -3,10 +3,12 @@ const {
   addCourse,
   getAdminCourses,
   getAllCourses,
-  purchaseCourse,
   updateCourse,
   deleteCourse,
-  getCourseById, // Import the new controller for single course
+  getCourseById,
+  getMyCourses,
+  enrollInCourse,
+  unenrollFromCourse,
 } = require("../controllers/courseController");
 const protectRoute = require("../middleware/authMiddleware");
 
@@ -24,13 +26,18 @@ router.get("/all", getAllCourses);
 // Admin or User - Get a single course by ID
 router.get("/get-course/:id", protectRoute, getCourseById); // New route for viewing course details
 
-// User - Purchase a course
-router.post("/purchase", protectRoute, purchaseCourse);
-
 // Admin - Update a Course
 router.put("/update/:id", protectRoute, updateCourse);
 
 // Admin - Delete a Course
 router.delete("/delete/:id", protectRoute, deleteCourse);
+
+// User - Enroll in a course
+router.post("/enroll", protectRoute, enrollInCourse);
+
+router.get("/my-courses", protectRoute, getMyCourses);
+
+router.post("/enroll", protectRoute, enrollInCourse);
+router.post("/unenroll", protectRoute, unenrollFromCourse);
 
 module.exports = router;

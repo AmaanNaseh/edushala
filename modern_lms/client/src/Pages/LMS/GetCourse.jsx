@@ -27,6 +27,13 @@ const GetCourse = () => {
     fetchCourse();
   }, [id]);
 
+  const extractVideoID = (url) => {
+    const regex =
+      /(?:youtu\.be\/|youtube\.com\/(?:.*v=|embed\/|v\/|shorts\/))([\w-]+)/;
+    const match = url.match(regex);
+    return match ? match[1] : ""; // Returns the video ID or an empty string
+  };
+
   if (!course) return <div>Loading...</div>;
 
   return (
@@ -81,9 +88,9 @@ const GetCourse = () => {
           <div className="my-10">
             <iframe
               className="w-full h-full min-w-[300px] min-h-[200px] md:min-w-[500px] md:min-h-[350px] lg:min-h-[625px] my-[15px]"
-              src={`https://www.youtube.com/embed/${
-                currentLecture.split("youtu.be/")[1]
-              }`}
+              src={`https://www.youtube.com/embed/${extractVideoID(
+                currentLecture
+              )}`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>

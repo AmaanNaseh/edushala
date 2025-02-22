@@ -33,6 +33,12 @@ const BookUpdate = () => {
   const updateBook = async () => {
     const token = localStorage.getItem("authToken");
 
+    const linkRegex = /^(http|https|www)/;
+    if (!linkRegex.test(booklink)) {
+      alert("Book link must contain 'www' or 'http'.");
+      return;
+    }
+
     const updatedBook = {
       bookname: bookname || oldBook.bookname,
       booksubject: booksubject || oldBook.booksubject,

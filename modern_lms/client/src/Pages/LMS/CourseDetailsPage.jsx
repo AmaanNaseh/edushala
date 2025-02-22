@@ -6,6 +6,7 @@ import { backend_API } from "../../Config/Config";
 const CourseDetailsPage = () => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
+  const [currentLecture, setCurrentLecture] = useState("");
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -63,19 +64,29 @@ const CourseDetailsPage = () => {
                 {module.lectures.map((lecture, idx) => (
                   <li key={idx} className="flex items-center gap-4">
                     <span>{lecture.label} :</span>
-                    <a
-                      href={lecture.videoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:underline"
+                    <p
+                      onClick={() => {
+                        setCurrentLecture(lecture.videoLink);
+                      }}
+                      className="text-blue-500 hover:underline cursor-pointer"
                     >
                       Watch
-                    </a>
+                    </p>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+        </div>
+        <div className="my-10">
+          <iframe
+            className="w-full h-full min-w-[300px] min-h-[200px] md:min-w-[500px] md:min-h-[350px] lg:min-h-[625px] my-[15px]"
+            src={`https://www.youtube.com/embed/${
+              currentLecture.split("youtu.be/")[1]
+            }`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>

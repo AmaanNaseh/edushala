@@ -18,6 +18,12 @@ const BookCreate = () => {
       return;
     }
 
+    const linkRegex = /^(http|https|www)/;
+    if (!linkRegex.test(booklink)) {
+      alert("Book link must contain 'www' or 'http'.");
+      return;
+    }
+
     const token = localStorage.getItem("authToken");
     if (!token) {
       alert("Unauthorized. Please log in.");

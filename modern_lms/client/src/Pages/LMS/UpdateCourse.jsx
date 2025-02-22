@@ -45,6 +45,14 @@ const UpdateCourse = () => {
   };
 
   const addLecture = (moduleIndex) => {
+    const linkRegex = /^(youtu|youtube)/;
+    if (!linkRegex.test(newLecture.videoLink)) {
+      alert(
+        "Youtube Video link must be valid i.e. https://youtu.be/... or https://youtube.com/..."
+      );
+      return;
+    }
+
     if (newLecture.label && newLecture.videoLink) {
       const updatedModules = [...modules];
       updatedModules[moduleIndex].lectures.push(newLecture);

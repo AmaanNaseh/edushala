@@ -46,6 +46,13 @@ const UserCoursesPage = () => {
         <h1 className="font-bold italic text-2xl md:text-3xl lg:text-5xl bg-bluegradientR bg-clip-text text-transparent text-center my-4 md:my-7">
           My Courses
         </h1>
+        {myCourses.length === 0 ? (
+          <p className="font-semibold text-center my-4">
+            Please Enroll in any course
+          </p>
+        ) : (
+          ""
+        )}
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_400px))] gap-8">
           {myCourses.map((course) => (
             <Link to={`/user/course-details/${course._id}`}>

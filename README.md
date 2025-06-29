@@ -1,4 +1,4 @@
-# ![Image](https://github.com/user-attachments/assets/f5f79d68-abb5-4ad1-bffa-3589c40eda70) EDUSHALA
+# ![Image](https://github.com/user-attachments/assets/55c0396b-b892-4ac4-9a84-0f1995ba3fa3) EDUSHALA
 
 A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
@@ -6,27 +6,25 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## Live Website:
 
-<a href="https://edushala.vercel.app" target="_blank" >![Image](https://github.com/user-attachments/assets/a459357e-036f-4f03-b56b-c0503fb5037a) https://edushala.vercel.app</a>
+<a href="https://edushala.vercel.app" target="_blank" >![Image](https://github.com/user-attachments/assets/00c0deb9-de02-4480-8058-c54dae53e2cc) https://edushala.vercel.app</a>
 
 ## Youtube Video:
 
-<a href="https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_" target="_blank" >![Image](https://github.com/user-attachments/assets/c1a02cc8-8d95-4c74-bfcb-11db63b143d0) https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_</a>
+<a href="https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_" target="_blank" >![Image](https://github.com/user-attachments/assets/f584d4b1-9605-4759-9748-f95a93a7ef5f) https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_</a>
 
 ## Developers:
 
-- <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Amaan Naseh</a>
-- <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Abdul Waheed Al Faaiz</a>
-- <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) Mudassir Ahmed Khan</a>
+- <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) Amaan Naseh</a>
+- <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) Abdul Waheed Al Faaiz</a>
+- <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) Mudassir Ahmed Khan</a>
 
 ## HackJMI25 Winners
 
 - <a href="https://hackjmi2025.devfolio.co/projects?show_winners=true" target="_blank" > 1st Prize </a>
 - <a href="https://devfolio.co/projects/edushala-adaptive-and-aieducational-platform-875e" target="_blank" >Devfolio Repo</a>
 
-<!-- ![Image](https://github.com/user-attachments/assets/9afdc029-194b-4e22-b404-3f8ff00f4dfa) -->
-
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9afdc029-194b-4e22-b404-3f8ff00f4dfa" alt="Image" />
+  <img src="https://github.com/user-attachments/assets/73c295b7-d203-48c5-83e9-b0b06986653b" alt="Image" />
 </p>
 
 ## Features:
@@ -48,7 +46,7 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## Tech stack
 
-![Image](https://github.com/user-attachments/assets/ffa2803e-1077-4a5a-ab10-43d33d23d00f)
+![Image](https://github.com/user-attachments/assets/7090647d-8d7d-4654-9c76-d3cd7592ba89)
 
 ## Steps to run this project:
 
@@ -198,22 +196,22 @@ npm run dev
 
 ## Preview of our website
 
-![Image](https://github.com/user-attachments/assets/8f7de117-444f-416e-8218-ae0598a3525c)
-![Image](https://github.com/user-attachments/assets/2d6f7609-96f8-439f-a763-10e9eb4c7b47)
-![Image](https://github.com/user-attachments/assets/e386c2a9-d1d2-455d-8f94-bff89a684b94)
-![Image](https://github.com/user-attachments/assets/b475f37b-4672-4b70-a737-34b78f726b9a)
-![Image](https://github.com/user-attachments/assets/163bc91a-19f8-42bf-b1ec-40391718b9f4)
-![Image](https://github.com/user-attachments/assets/48eb0026-1dc7-4655-baa0-310c06a1dcef)
-![Image](https://github.com/user-attachments/assets/be7c5d4c-9b22-4e61-aa41-08c9bd8e3fa5)
-![Image](https://github.com/user-attachments/assets/017e9f9b-2154-4816-8e07-9efa17011aad)
-![Image](https://github.com/user-attachments/assets/49500737-9b8a-41e4-bd9e-ccb93c994cac)
-![Image](https://github.com/user-attachments/assets/64a38514-5e07-424e-a5ea-fe9398b9631a)
-![Image](https://github.com/user-attachments/assets/74556177-bffa-4d96-a031-ae5979d6907f)
-![Image](https://github.com/user-attachments/assets/0915062f-8c29-4d97-bb4f-8e1aa76d9a67)
-![Image](https://github.com/user-attachments/assets/44127040-e5c4-4ff9-91dc-93f334de29f3)
-![Image](https://github.com/user-attachments/assets/4900a3fd-5379-4df6-9d6b-aa24fdd92439)
-![Image](https://github.com/user-attachments/assets/c6b41f00-3cd4-4c1e-9ec2-e32510e9cf4f)
-![Image](https://github.com/user-attachments/assets/38f2e42b-d5f4-4f1c-acf2-db80ad70a921)
+![Image](https://github.com/user-attachments/assets/e65683ef-09cc-4ce0-82d4-fa8edf5679a7)
+![Image](https://github.com/user-attachments/assets/346cb9d7-3301-437b-8da7-830e88de03a9)
+![Image](https://github.com/user-attachments/assets/88721ea9-dc71-4d09-9288-77fb99328b21)
+![Image](https://github.com/user-attachments/assets/cf210f68-0bde-49f9-82a6-5bdf6ba1fe1a)
+![Image](https://github.com/user-attachments/assets/a918e782-9c52-416e-8394-f2f659d7dbab)
+![Image](https://github.com/user-attachments/assets/1e3cdd11-b20f-46ca-b0e5-5546e9d51f2b)
+![Image](https://github.com/user-attachments/assets/ef26f30e-4396-4832-bdcd-13864a27551e)
+![Image](https://github.com/user-attachments/assets/9a8dc14a-f78a-42fb-b303-6d9169806a74)
+![Image](https://github.com/user-attachments/assets/cdbd5127-f048-4cf4-aa16-2d247fdff626)
+![Image](https://github.com/user-attachments/assets/115026ca-e715-4566-a5a8-bdcf87258f22)
+![Image](https://github.com/user-attachments/assets/e6de746c-91fb-4724-9911-06efa8c71e35)
+![Image](https://github.com/user-attachments/assets/0c3fa13a-c4d4-4da4-be5e-38d2b8ba4f87)
+![Image](https://github.com/user-attachments/assets/27822aa9-c047-43d1-a6bc-76c34305892c)
+![Image](https://github.com/user-attachments/assets/46a3173e-1112-450e-a5f5-ee79247503b1)
+![Image](https://github.com/user-attachments/assets/da636a4d-9f09-41ad-be3e-d252b6b50960)
+![Image](https://github.com/user-attachments/assets/7a3cca46-86c4-45fe-bf1f-40b1c21af7f3)
 
 ## Attributions of code inspiration
 

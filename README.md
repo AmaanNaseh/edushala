@@ -215,5 +215,5 @@ npm run dev
 
 ## Attributions of code inspiration
 
-- Sign Language: <a href="https://github.com/computervisioneng/sign-language-detector-python" target="_blank" >![Image](https://github.com/user-attachments/assets/0c382c40-ef69-4fbb-a42a-3eb61e16233e) computervisioneng</a> (Copyright (c) 2023 Computer vision developer)
+- Sign Language: <a href="https://github.com/computervisioneng/sign-language-detector-python" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) computervisioneng</a> (Copyright (c) 2023 Computer vision developer)
 - Face Recognition : https://learn.pantechsolutions.net/

@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const axios = require("axios");
 
 // Import routes
 const bookRoute = require("./routes/bookRoute");
@@ -31,6 +32,23 @@ exp.use("/api/cardmemory", cardmemoryRoute);
 exp.use("/api/users", userRoute); // Add user routes for signup/login
 exp.use("/api/quiz", quizRoute);
 exp.use("/api/courses", courseRoute); // LMS Course Routes
+
+// For Server Reload
+const url = `https://edushala-backend.onrender.com`;
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloded");
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
 
 // MongoDB connection and server setup
 mongoose

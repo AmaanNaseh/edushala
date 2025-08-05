@@ -10,11 +10,13 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoaderVisible, setIsLoaderVisible] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoaderVisible(true);
 
     if (!email || !password) {
       setError("Please fill in both fields.");
@@ -30,9 +32,11 @@ const LoginPage = () => {
       // Store token and role
       localStorage.setItem("authToken", response.data.token);
       localStorage.setItem("role", response.data.role);
+      setIsLoaderVisible(false);
 
       navigate("/profile");
     } catch (err) {
+      setIsLoaderVisible(false);
       setError(
         err.response
           ? err.response.data.message || "Invalid login credentials"
@@ -88,6 +92,13 @@ const LoginPage = () => {
             Submit
           </button>
         </form>
+
+        {isLoaderVisible ? (
+          <div className="w-[40px] h-[40px] rounded-full border-[5px] border-t-blue-700 border-gray-400 animate-spin mx-auto"></div>
+        ) : (
+          ""
+        )}
+
         <p className="font-medium mt-2 ml-1">
           Don't have an account?{" "}
           <Link

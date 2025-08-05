@@ -5,6 +5,6 @@ export const attendance_backend_API = "http://localhost:8000";
 export const sign_language_backend_API = "http://localhost:8001";
 // export const sign_language_backend_API = "/local-access";
 export const quiz_backend_API = "http://localhost:8002";
-// export const quiz_backend_API = "https://edushala-quiz.onrender.com";
+// export const quiz_backend_API = "/local-access";
 export const question_generator_API = "http://localhost:5174";
 // export const question_generator_API = "https://edushala-q-generator.vercel.app";

@@ -1,6 +1,7 @@
 import React from "react";
 import AttendanceSystemVideo from "../Assets/LocalAccessPage/Attendance_System.mp4";
 import SignLanguageVideo from "../Assets/LocalAccessPage/Sign_Language.mp4";
+import ScoreAnalyzerVideo from "../Assets/LocalAccessPage/Score_Analyzer.mp4";
 
 const LocalAccessPage = () => {
   return (
@@ -11,8 +12,8 @@ const LocalAccessPage = () => {
           code through github repo link given in Footer and run it locally.
         </h1>
         <p className="text-center font-semibold my-4">
-          The functionality of attendance system or AI-driven sign language
-          tutorials can be seen in video below:
+          The functionality of Attendance System, AI-driven sign language
+          tutorials and Quiz Score Analyzer can be seen in video below:
         </p>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
           <div className="w-[300px] md:w-[450px] lg:w-[500px] bg-black p-4">
@@ -24,6 +25,9 @@ const LocalAccessPage = () => {
           </div>
           <div className="w-[300px] md:w-[450px] lg:w-[500px] bg-black p-4">
             <video controls className="w-full" src={SignLanguageVideo}></video>
+          </div>
+          <div className="w-[300px] md:w-[450px] lg:w-[500px] bg-black p-4">
+            <video controls className="w-full" src={ScoreAnalyzerVideo}></video>
           </div>
         </div>
       </div>

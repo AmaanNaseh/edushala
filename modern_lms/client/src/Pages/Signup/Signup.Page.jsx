@@ -14,11 +14,13 @@ const SignupPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [role, setRole] = useState("user"); // Default role as 'user'
   const [error, setError] = useState("");
+  const [isLoaderVisible, setIsLoaderVisible] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoaderVisible(true);
 
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
@@ -36,9 +38,11 @@ const SignupPage = () => {
         }
       );
 
+      setIsLoaderVisible(false);
       alert(response.data.message);
       navigate("/login");
     } catch (error) {
+      setIsLoaderVisible(false);
       console.error("Error:", error);
       setError(error.response?.data?.message || "Something went wrong");
     }
@@ -144,6 +148,12 @@ const SignupPage = () => {
             Submit
           </button>
         </form>
+
+        {isLoaderVisible ? (
+          <div className="w-[40px] h-[40px] rounded-full border-[5px] border-t-blue-700 border-gray-400 animate-spin mx-auto"></div>
+        ) : (
+          ""
+        )}
 
         <p className="font-medium mt-2 ml-1">
           Already have an account?{" "}

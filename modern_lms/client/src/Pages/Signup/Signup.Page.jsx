@@ -60,7 +60,7 @@ const SignupPage = () => {
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-lg">
           <label className="my-1">Role</label>
           <select
-            className="border-[#2563eb] border-[2px] w-[275px] p-1"
+            className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
             value={role}
             onChange={(e) => setRole(e.target.value)}
           >
@@ -71,7 +71,7 @@ const SignupPage = () => {
           <label className="my-1">Username</label>
           <input
             type="text"
-            className="border-[#2563eb] border-[2px] w-[275px] p-1"
+            className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -80,7 +80,7 @@ const SignupPage = () => {
           <label className="my-1">Full Name</label>
           <input
             type="text"
-            className="border-[#2563eb] border-[2px] w-[275px] p-1"
+            className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
             value={userFullName}
             onChange={(e) => setUserFullName(e.target.value)}
             required
@@ -89,7 +89,7 @@ const SignupPage = () => {
           <label className="my-1">Email</label>
           <input
             type="email"
-            className="border-[#2563eb] border-[2px] w-[275px] p-1"
+            className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -98,7 +98,7 @@ const SignupPage = () => {
           <label className="my-1">Password</label>
           <div className="relative">
             <input
-              className="border-[#2563eb] border-[2px] w-[275px] p-1"
+              className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
               type={psdType}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -107,12 +107,12 @@ const SignupPage = () => {
             {psdType === "password" ? (
               <BsEye
                 onClick={() => setPsdType("text")}
-                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer"
+                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer text-black"
               />
             ) : (
               <BsEyeSlash
                 onClick={() => setPsdType("password")}
-                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer"
+                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer text-black"
               />
             )}
           </div>
@@ -120,7 +120,7 @@ const SignupPage = () => {
           <label className="my-1">Confirm Password</label>
           <div className="relative">
             <input
-              className="border-[#2563eb] border-[2px] w-[275px] p-1"
+              className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
               type={psdType}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -129,12 +129,12 @@ const SignupPage = () => {
             {psdType === "password" ? (
               <BsEye
                 onClick={() => setPsdType("text")}
-                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer"
+                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer text-black"
               />
             ) : (
               <BsEyeSlash
                 onClick={() => setPsdType("password")}
-                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer"
+                className="absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer text-black"
               />
             )}
           </div>
@@ -159,7 +159,7 @@ const SignupPage = () => {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="border-b-2 border-black text-[#2563eb] font-semibold"
+            className="border-b-2 border-[#2563eb] text-[#2563eb] font-semibold"
           >
             Login
           </Link>

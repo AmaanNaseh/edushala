@@ -10,10 +10,11 @@ import {
 
 import { FaUserGraduate } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaMobile } from "react-icons/fa6";
+import { FaMobile, FaRegMoon } from "react-icons/fa6";
 import { FaLaptop } from "react-icons/fa";
 import { MdLogout, MdOutlineClose } from "react-icons/md";
 import { IoMdArrowDown } from "react-icons/io";
+import { LuSunMedium } from "react-icons/lu";
 
 import Brochure from "../../Assets/BrochurePage/Brochure.pdf";
 import GTranslator from "../GTranslator/GTranslator";
@@ -32,6 +33,8 @@ const Navbar = ({
   setIsVisible,
   language,
   setLanguage,
+  isDarkMode,
+  setIsDarkMode,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSideNav, setIsSideNav] = useState(false);
@@ -60,15 +63,16 @@ const Navbar = ({
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  const role = localStorage.getItem("role");
-
   return (
     <>
       <nav
-        className={`flex items-center justify-between gap-10 p-4 shadow-md shadow-black/50 bg-[#ffffff] sticky top-0 left-0 w-[100%] z-30 ${
-          isScrolled ? "" : ""
+        className={`flex items-center justify-between gap-10 p-4 sticky top-0 left-0 w-[100%] z-30 ${
+          isDarkMode
+            ? "shadow-md shadow-white/50 bg-[#0D1117]/75"
+            : "shadow-md shadow-black/50 bg-[#ffffff]"
         }`}
       >
+        {/* Home Logo */}
         <Link className="hover:scale-105" to={"/"}>
           <div className="flex items-center gap-2">
             <FaUserGraduate className="text-3xl text-[#1674c9]" />
@@ -76,7 +80,9 @@ const Navbar = ({
           </div>
         </Link>
 
+        {/* Common for both screens */}
         <div className="flex items-center justify-center gap-10">
+          {/* List items large screens */}
           <ul className="hidden lg:inline-flex gap-4 items-center text-lg ">
             <li
               onClick={() => {
@@ -87,18 +93,57 @@ const Navbar = ({
               }`}
             >
               Features{" "}
-              <IoMdArrowDown className="text-xl rounded-full border-[2px] border-black font-bold hover:scale-105" />
+              <IoMdArrowDown
+                className={`text-xl rounded-full border-[2px] font-bold hover:scale-105 ${
+                  isDarkMode ? "border-white" : "border-black"
+                }`}
+              />
             </li>
           </ul>
 
+          {/* Translator */}
           <GTranslator language={language} setLanguage={setLanguage} />
-          <DownloadWebsite />
+
+          {/* Dark Mode Button */}
+          <div
+            className={`rounded-full p-1 border-[1px] flex items-center justify-center gap-2 ${
+              isDarkMode
+                ? "border-[#ffffff] bg-[#000]"
+                : "border-black bg-[#ffffff]"
+            }`}
+          >
+            <div
+              onClick={() => {
+                setIsDarkMode(false);
+              }}
+              className={`rounded-full text-lg p-2 cursor-pointer ${
+                isDarkMode ? "text-white" : "bg-[#1674c9] text-white"
+              }`}
+            >
+              <LuSunMedium />
+            </div>
+            <div
+              onClick={() => {
+                setIsDarkMode(true);
+              }}
+              className={`rounded-full text-lg p-2 cursor-pointer ${
+                isDarkMode ? "bg-[#1674c9] text-white" : ""
+              }`}
+            >
+              <FaRegMoon />
+            </div>
+          </div>
+
+          {/* Download Website for large screens */}
+          <div className="hidden md:block">
+            <DownloadWebsite />
+          </div>
         </div>
 
         {/* Large Screens Features  */}
         {isFeatures ? (
-          <div className="hidden lg:flex flex-row fixed top-[71px] left-0 right-0 z-20 bg-[#ffffff] border-t-[2px] border-t-black shadow-lg shadow-black/50 text-black">
-            <div className="p-8 flex flex-wrap gap-8 items-start w-[80%]">
+          <div className="hidden lg:block fixed top-[71px] left-0 right-0 z-20 bg-[#ffffff] border-t-[2px] border-t-black shadow-lg shadow-black/50 text-black">
+            <div className="p-8 flex flex-wrap items-start gap-16">
               <ul className="list-none flex flex-col gap-2 text-[13px]">
                 <li className="my-4 font-bold text-lg">Core Features</li>
 
@@ -446,41 +491,12 @@ const Navbar = ({
                 </a>
               </ul>
             </div>
-
-            <div className="m-8 rounded-[20px] bg-gradient-to-b from-black to-white text-white border-[1px] border-gray-100 shadow-lg shadow-black/40 w-[20%] p-8">
-              <h3 className="font-bold text-lg text-center">
-                Offline Installation
-              </h3>
-              <ul className="list-none flex flex-col items-start justify-center gap-4 my-8">
-                <li
-                  onClick={() => {
-                    handleDownloadsNavigation(450);
-                  }}
-                  className="flex items-center justify-center gap-2 font-semibold p-4 border-black border-[2px] hover:border-[3px] hover:bg-white hover:text-black cursor-pointer"
-                >
-                  Mobile
-                  <span className="text-3xl ml-[29px]">
-                    <FaMobile />
-                  </span>
-                </li>
-                <li
-                  onClick={() => {
-                    handleDownloadsNavigation(100);
-                  }}
-                  className="flex items-center justify-center gap-2 font-semibold p-4 border-black border-[2px] hover:border-[3px] hover:bg-white hover:text-black cursor-pointer"
-                >
-                  Desktop
-                  <span className="text-3xl ml-4">
-                    <FaLaptop />
-                  </span>
-                </li>
-              </ul>
-            </div>
           </div>
         ) : (
           ""
         )}
 
+        {/* Profile and Logout for big screens */}
         <div className="gap-4 items-center justify-center hidden lg:flex">
           {token ? (
             <div className="flex items-center justify-center gap-2">
@@ -679,12 +695,17 @@ const Navbar = ({
                   Voice Cursor
                 </li>
               </ul>
+
+              <div className="w-fit mx-auto">
+                <DownloadWebsite />
+              </div>
             </div>
           </ul>
         ) : (
           ""
         )}
 
+        {/* Small Screens Menu */}
         {isSideNav ? (
           <MdOutlineClose
             onClick={() => {

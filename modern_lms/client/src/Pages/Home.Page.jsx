@@ -41,7 +41,7 @@ import SolveMazeLogo from "../Assets/HomePage/SolveMaze.png";
 import SudokuLogo from "../Assets/HomePage/Sudoku.png";
 import { HeroSection } from "../Components/HeroSection/HeroSection";
 
-const HomePage = () => {
+const HomePage = ({ isDarkMode }) => {
   const navigate = useNavigate();
 
   const handleShortcutsNavigation = (scrollValue) => {
@@ -51,16 +51,22 @@ const HomePage = () => {
   return (
     <>
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection isDarkMode={isDarkMode} />
 
       {/* What We Offer */}
-      <div className="m-10 my-16">
+      <div className="m-10 my-16 md:mt-32">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           What we offer
         </h1>
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-8">
           <Link to={"/self-paced-courses"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img
                   src={SelfPacedCoursesLogo}
@@ -74,7 +80,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/e-library"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={DigitalLibraryLogo} alt="image" className="w-full" />
               </div>
@@ -84,7 +96,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/games"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={GameLogo} alt="image" className="w-full" />
               </div>
@@ -99,7 +117,13 @@ const HomePage = () => {
             rel="noreferrer"
             href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/10/20250128103655-FIOLFGT8.json"
           >
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={AIDoubtSolverLogo} alt="image" className="w-full" />
               </div>
@@ -113,7 +137,13 @@ const HomePage = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img
                   src={AttendanceSystemLogo}
@@ -127,7 +157,13 @@ const HomePage = () => {
             </div>
           </a>
           <Link to={"/live-classes"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={LiveClassesLogo} alt="image" className="w-full" />
               </div>
@@ -141,7 +177,13 @@ const HomePage = () => {
             rel="noreferrer"
             href={`${question_generator_API}`}
           >
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={ExamPreparationLogo} alt="image" className="w-full" />
               </div>
@@ -152,7 +194,13 @@ const HomePage = () => {
           </a>
 
           <Link to={"/score-analysis"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={ScoreAnalysisLogo} alt="image" className="w-full" />
               </div>
@@ -162,7 +210,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/cgpa-calculator"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={CGPACalculatorLogo} alt="image" className="w-full" />
               </div>
@@ -172,7 +226,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/download-website"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={OfflineLogo} alt="image" className="w-full" />
               </div>
@@ -185,13 +245,19 @@ const HomePage = () => {
       </div>
 
       {/* Adaptive Learning */}
-      <div className="m-10 my-16">
+      <div className="m-10 my-16 md:mt-32">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Adaptive Learning Platform
         </h1>
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(425px,_1fr))] gap-8">
           <Link to={"/dashboard"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={DashboardLogo} alt="image" className="w-full" />
               </div>
@@ -201,7 +267,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/quiz"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={QuizLogo} alt="image" className="w-full" />
               </div>
@@ -211,7 +283,13 @@ const HomePage = () => {
             </div>
           </Link>
           <a href={`${quiz_backend_API}`} target="_blank" rel="noreferrer">
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img
                   src={QuizScoreAnalyzerLogo}
@@ -225,7 +303,13 @@ const HomePage = () => {
             </div>
           </a>
           <Link to={"/time-management"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={TimeManagementLogo} alt="image" className="w-full" />
               </div>
@@ -238,7 +322,7 @@ const HomePage = () => {
       </div>
 
       {/* Special Education */}
-      <div className="m-10 my-16">
+      <div className="m-10 my-16 md:mt-32">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Special Education for Disabled Students
         </h1>
@@ -248,7 +332,13 @@ const HomePage = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={AlphabetsLogo} alt="image" className="w-full" />
               </div>
@@ -262,7 +352,13 @@ const HomePage = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={NumbersLogo} alt="image" className="w-full" />
               </div>
@@ -272,7 +368,13 @@ const HomePage = () => {
             </div>
           </a>
           <Link to={"/digital-orbit-writer"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={OrbitWriterLogo} alt="image" className="w-full" />
               </div>
@@ -282,7 +384,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/voice-to-text"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={VoiceToTextLogo} alt="image" className="w-full" />
               </div>
@@ -295,7 +403,11 @@ const HomePage = () => {
             onClick={() => {
               handleShortcutsNavigation(100);
             }}
-            className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center"
+            className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+              isDarkMode
+                ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+            }`}
           >
             <div className="w-[100px] h-[100px]">
               <img src={CursorLogo} alt="image" className="w-full" />
@@ -308,7 +420,11 @@ const HomePage = () => {
             onClick={() => {
               handleShortcutsNavigation(700);
             }}
-            className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center"
+            className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+              isDarkMode
+                ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+            }`}
           >
             <div className="w-[100px] h-[100px]">
               <img src={ScreenReaderLogo} alt="image" className="w-full" />
@@ -321,13 +437,19 @@ const HomePage = () => {
       </div>
 
       {/* Neurodivergent Exercises */}
-      <div className="m-10 my-16">
+      <div className="m-10 my-16 md:mt-32">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Special Exercises for Neurodivergent Students
         </h1>
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(425px,_1fr))] gap-8">
           <Link to={"/games/sudoku"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={SudokuLogo} alt="image" className="w-full" />
               </div>
@@ -337,7 +459,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/games/memory-match"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={MemoryMatchLogo} alt="image" className="w-full" />
               </div>
@@ -347,7 +475,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/games/maze"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={SolveMazeLogo} alt="image" className="w-full" />
               </div>
@@ -357,7 +491,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/games/bingo"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={BingoLogo} alt="image" className="w-full" />
               </div>
@@ -367,7 +507,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/games/words-color-match"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={WordsColorMatchLogo} alt="image" className="w-full" />
               </div>
@@ -377,7 +523,13 @@ const HomePage = () => {
             </div>
           </Link>
           <Link to={"/games/voice-match"}>
-            <div className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center">
+            <div
+              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+                isDarkMode
+                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+              }`}
+            >
               <div className="w-[100px] h-[100px]">
                 <img src={VoiceMatchLogo} alt="image" className="w-full" />
               </div>
@@ -390,7 +542,11 @@ const HomePage = () => {
             onClick={() => {
               handleShortcutsNavigation(1200);
             }}
-            className="bg-[#f2f8ff] min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40 flex flex-col items-center justify-center"
+            className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
+              isDarkMode
+                ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
+                : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
+            }`}
           >
             <div className="w-[100px] h-[100px]">
               <img src={ScreenMagnifierLogo} alt="image" className="w-full" />

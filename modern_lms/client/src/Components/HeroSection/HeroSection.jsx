@@ -6,11 +6,10 @@ import {
   Users,
   BookOpen,
   ClipboardCheck,
-  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function HeroSection() {
+export function HeroSection({ isDarkMode }) {
   const icons = [
     { Icon: Monitor, delay: 0.2, position: "top-20 left-[15%]" },
     { Icon: Smartphone, delay: 0.4, position: "top-20 right-[15%]" },
@@ -24,7 +23,11 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700">
+      <div
+        className={`absolute inset-0 ${
+          isDarkMode ? "bg-[#19202A]" : "bg-bluegradientR"
+        }`}
+      >
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
       </div>
 
@@ -91,25 +94,9 @@ export function HeroSection() {
           </motion.p>
 
           <Link to={"/signup"}>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="group bg-white text-blue-600 px-8 py-4 rounded-full inline-flex items-center gap-3 shadow-2xl hover:shadow-blue-500/50 transition-all"
-            >
+            <button className="bg-[#ffffff] rounded-full text-[#1674c9] px-8 py-4 font-bold hover:scale-105">
               Get Started
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight className="w-5 h-5" />
-              </motion.div>
-            </motion.button>
+            </button>
           </Link>
         </motion.div>
 

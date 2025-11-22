@@ -75,6 +75,7 @@ const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [language, setLanguage] = useState("en");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [synthActive, setSynthActive] = useState(false);
   const synth = useRef(window.speechSynthesis);
@@ -137,6 +138,16 @@ const App = () => {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.style.backgroundColor = "#000";
+      document.body.style.color = "#ffffff";
+    } else {
+      document.body.style.backgroundColor = "#ffffff";
+      document.body.style.color = "#000";
+    }
+  }, [isDarkMode]);
+
   return (
     <>
       <Navbar
@@ -152,11 +163,13 @@ const App = () => {
         setSynthActive={setSynthActive}
         language={language}
         setLanguage={setLanguage}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
       />
 
       <div className="min-h-screen">
         <Routes>
-          <Route path={"/"} element={<HomePage />} />
+          <Route path={"/"} element={<HomePage isDarkMode={isDarkMode} />} />
 
           <Route path={"/login"} element={<LoginPage />} />
           <Route path={"/signup"} element={<SignupPage />} />

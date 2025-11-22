@@ -198,7 +198,7 @@ const Bingo = () => {
           <h2 className="text-lg font-semibold">{currentTurn}'s Turn</h2>
           <div className="flex items-center space-x-4">
             <input
-              className="border-black border-[2px] rounded p-2"
+              className="border-[#1764c9] border-[2px] rounded p-2 text-black"
               type="number"
               placeholder="Enter a number to call"
               id="player-number"
@@ -240,7 +240,7 @@ const Bingo = () => {
                 row.map((cell, colIndex) => (
                   <div
                     key={`${rowIndex}-${colIndex}`}
-                    className={`w-12 h-12 flex items-center justify-center border-[2px] border-black rounded ${
+                    className={`w-12 h-12 flex items-center justify-center border-[2px] border-[#1764c9] rounded ${
                       cell === "X" ? "bg-[#00FF9C] text-white" : ""
                     }`}
                   >
@@ -248,7 +248,7 @@ const Bingo = () => {
                       cell
                     ) : (
                       <input
-                        className="w-full h-full text-center outline-none"
+                        className="w-full h-full text-center outline-none text-black"
                         type="number"
                         value={cell}
                         onChange={(e) =>
@@ -316,7 +316,7 @@ const Bingo = () => {
                 row.map((cell, colIndex) => (
                   <div
                     key={`${rowIndex}-${colIndex}`}
-                    className={`w-12 h-12 flex items-center justify-center border-[2px] border-black rounded ${
+                    className={`w-12 h-12 flex items-center justify-center border-[2px] border-[#1764c9] rounded ${
                       cell === "X" ? "bg-red-500 text-white" : ""
                     }`}
                   >
@@ -324,7 +324,7 @@ const Bingo = () => {
                       cell
                     ) : (
                       <input
-                        className="w-full h-full text-center outline-none"
+                        className="w-full h-full text-center outline-none text-black"
                         type="number"
                         value={cell}
                         onChange={(e) =>

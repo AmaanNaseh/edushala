@@ -59,7 +59,7 @@ const LoginPage = () => {
           <label className="my-1">Email</label>
           <input
             type="email"
-            className="border-[#2563eb] border-[2px] w-[275px] p-1"
+            className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -67,7 +67,7 @@ const LoginPage = () => {
           <label className="my-1">Password</label>
           <div className="relative">
             <input
-              className="border-[#2563eb] border-[2px] w-[275px] p-1"
+              className="border-[#2563eb] border-[2px] w-[275px] p-1 text-black"
               type={psdType}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -104,7 +104,7 @@ const LoginPage = () => {
           Don't have an account?{" "}
           <Link
             to="/signup"
-            className="border-b-2 border-black text-[#2563eb] font-semibold"
+            className="border-b-2 border-[#2563eb] text-[#2563eb] font-semibold"
           >
             Sign up
           </Link>

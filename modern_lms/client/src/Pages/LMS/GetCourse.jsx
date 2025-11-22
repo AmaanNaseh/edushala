@@ -59,7 +59,7 @@ const GetCourse = () => {
             {course.modules.map((module, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-4 p-6 bg-gray-100 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3"
+                className="flex flex-col gap-4 p-6 bg-gray-100 text-black rounded-md shadow-md w-full md:w-1/2 lg:w-1/3"
               >
                 {/* Module Title */}
                 <h4 className="text-xl font-semibold text-center">
@@ -87,7 +87,7 @@ const GetCourse = () => {
           </div>
           <div className="my-10">
             <iframe
-              className="w-full h-full min-w-[300px] min-h-[200px] md:min-w-[500px] md:min-h-[350px] lg:min-h-[625px] my-[15px]"
+              className="w-full h-full min-w-[300px] min-h-[200px] md:min-w-[500px] md:min-h-[350px] lg:min-h-[625px] my-[15px] border-[2px] border-[#1764c9]"
               src={`https://www.youtube.com/embed/${extractVideoID(
                 currentLecture
               )}`}

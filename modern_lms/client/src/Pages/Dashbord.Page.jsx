@@ -263,7 +263,7 @@ const DashbordPage = () => {
       </h1>
 
       <div className="flex flex-wrap gap-8 items-center justify-evenly my-10">
-        <div className="flex flex-col items-center justify-center gap-4 bg-white">
+        <div className="flex flex-col items-center justify-center gap-4 bg-white text-black">
           <h3 className="font-bold text-2xl">Sudoku</h3>
           <div className="flex flex-row flex-wrap gap-8">
             <div className="min-w-[200px] min-h-[175px] lg:min-w-[400px] lg:min-h-[225px]">
@@ -275,7 +275,7 @@ const DashbordPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 bg-white">
+        <div className="flex flex-col items-center justify-center gap-4 bg-white text-black">
           <h3 className="font-bold text-2xl">Memory Match Game</h3>
           <div className="flex flex-row flex-wrap gap-8">
             <div className="min-w-[200px] min-h-[175px] lg:min-w-[400px] lg:min-h-[225px]">
@@ -289,7 +289,7 @@ const DashbordPage = () => {
       </div>
 
       <div className="flex flex-wrap gap-8 items-center justify-evenly my-10">
-        <div className="flex flex-col items-center justify-center gap-4 bg-white">
+        <div className="flex flex-col items-center justify-center gap-4 bg-white text-black">
           <h3 className="font-bold text-2xl">Science Quiz</h3>
           <div className="min-w-[200px] min-h-[175px] lg:min-w-[400px] lg:min-h-[225px]">
             <Line
@@ -299,7 +299,7 @@ const DashbordPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 bg-white">
+        <div className="flex flex-col items-center justify-center gap-4 bg-white text-black">
           <h3 className="font-bold text-2xl">Math Quiz</h3>
           <div className="min-w-[200px] min-h-[175px] lg:min-w-[400px] lg:min-h-[225px]">
             <Line
@@ -309,7 +309,7 @@ const DashbordPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 bg-white">
+        <div className="flex flex-col items-center justify-center gap-4 bg-white text-black">
           <h3 className="font-bold text-2xl">English Quiz</h3>
           <div className="min-w-[200px] min-h-[175px] lg:min-w-[400px] lg:min-h-[225px]">
             <Line

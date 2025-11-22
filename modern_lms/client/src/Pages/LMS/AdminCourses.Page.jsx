@@ -67,7 +67,8 @@ const AdminCoursesPage = () => {
           </Link>
         )}
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_400px))] gap-8">
+
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_400px))] gap-8 text-black">
         {courses.map((course) => (
           <div
             key={course._id}

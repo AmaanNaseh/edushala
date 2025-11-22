@@ -45,7 +45,7 @@ const BookDelete = () => {
   return (
     <>
       {book ? (
-        <div className=" rounded-lg bg-[#F2EFE7] mx-auto p-8 shadow-black/40 shadow-md w-fit py-8 my-10 flex flex-col items-center gap-4 min-w-[250px] max-w-[300px] md:max-w-[450px] lg:max-w-[700px]">
+        <div className=" rounded-lg bg-[#F2EFE7] text-black mx-auto p-8 shadow-black/40 shadow-md w-fit py-8 my-10 flex flex-col items-center gap-4 min-w-[250px] max-w-[300px] md:max-w-[450px] lg:max-w-[700px]">
           <div className="w-[100px] mx-auto my-4">
             <img src={BookLogo} alt="book" className="w-full" />
           </div>

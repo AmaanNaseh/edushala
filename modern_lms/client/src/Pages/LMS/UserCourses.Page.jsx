@@ -57,7 +57,7 @@ const UserCoursesPage = () => {
           {myCourses.map((course) => (
             <Link to={`/user/course-details/${course._id}`}>
               <div
-                className="bg-white min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-black border-[1px] shadow-md shadow-black/40 flex flex-col items-center justify-center gap-4"
+                className="bg-white text-black min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-black border-[1px] shadow-md shadow-black/40 flex flex-col items-center justify-center gap-4"
                 key={course._id}
               >
                 <div className="w-[150px]">
@@ -87,7 +87,7 @@ const UserCoursesPage = () => {
           {courses.map((course) => (
             <Link to={`/user/course-details/${course._id}`}>
               <div
-                className="bg-white min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-black border-[1px] shadow-md shadow-black/40 flex flex-col items-center justify-center gap-4"
+                className="bg-white text-black min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 border-black border-[1px] shadow-md shadow-black/40 flex flex-col items-center justify-center gap-4"
                 key={course._id}
               >
                 <div className="w-[150px]">

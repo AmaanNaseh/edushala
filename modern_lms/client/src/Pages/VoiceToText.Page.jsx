@@ -130,7 +130,7 @@ const VoiceToTextPage = () => {
         </h1>
         <textarea
           value={transcribedText}
-          className="border-black border-[2px] px-5 py-4 max-w-[300px] md:max-w-full md:resize-none shadow-md"
+          className="border-black border-[2px] px-5 py-4 max-w-[300px] md:max-w-full md:resize-none shadow-md text-black"
           onChange={handleChange}
           placeholder="Press Enter twice & start speaking & again twice for stopping. Then listen typed statement by tapping Plus button twice..."
           rows={10}

@@ -81,16 +81,16 @@ const CGPACalculatorPage = () => {
         CGPA Calculator
       </h1>
       <div className="overflow-x-auto">
-        <table className="table-auto w-full  text-[8px] md:text-[16px] border-collapse border-[2px] border-black">
+        <table className="table-auto w-full  text-[8px] md:text-[16px] border-collapse border-[2px] border-[#1764c9]">
           <thead>
             <tr>
-              <th className="border-[2px] border-black px-2 md:px-4 py-2">
+              <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                 Subject
               </th>
-              <th className="border-[2px] border-black px-2 md:px-4 py-2">
+              <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                 Credits
               </th>
-              <th className="border-[2px] border-black px-2 md:px-4 py-2">
+              <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                 Obtained Marks (out of 100)
               </th>
             </tr>
@@ -98,7 +98,7 @@ const CGPACalculatorPage = () => {
           <tbody>
             {subjects.map((subject, index) => (
               <tr key={index}>
-                <td className="border-[2px] border-black px-2 md:px-4 py-2">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   <input
                     type="text"
                     placeholder="Subject Name"
@@ -106,10 +106,10 @@ const CGPACalculatorPage = () => {
                     onChange={(e) =>
                       handleInputChange(index, "name", e.target.value)
                     }
-                    className="w-full p-2 border-[2px] border-black"
+                    className="w-full p-2 border-[2px] border-[#1764c9] text-black"
                   />
                 </td>
-                <td className="border-[2px] border-black px-2 md:px-4 py-2">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   <input
                     type="number"
                     placeholder="Credits"
@@ -121,10 +121,10 @@ const CGPACalculatorPage = () => {
                         Math.max(0, e.target.value)
                       )
                     }
-                    className="w-full p-2 border-[2px] border-black"
+                    className="w-full p-2 border-[2px] border-[#1764c9] text-black"
                   />
                 </td>
-                <td className="border-[2px] border-black px-2 md:px-4 py-2">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   <input
                     type="number"
                     placeholder="Obtained Marks"
@@ -136,19 +136,19 @@ const CGPACalculatorPage = () => {
                         Math.max(0, e.target.value)
                       )
                     }
-                    className="w-full p-2 border-[2px] border-black"
+                    className="w-full p-2 border-[2px] border-[#1764c9] text-black"
                   />
                 </td>
               </tr>
             ))}
             <tr className="font-bold">
               <td
-                className="border-[2px] border-black px-2 md:px-4 py-2 text-right"
+                className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-right"
                 colSpan={2}
               >
                 CGPA
               </td>
-              <td className="border-[2px] border-black px-2 md:px-4 py-2 text-center">
+              <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-center">
                 {cgpa}
               </td>
             </tr>

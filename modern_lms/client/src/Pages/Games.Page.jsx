@@ -49,7 +49,7 @@ const GamesPage = () => {
             <button
               key={index}
               onClick={() => setSelectedGame(game.component)}
-              className="flex items-center justify-center gap-4 w-fit min-h-[75px] bg-white font-semibold p-2 rounded hover:bg-blue-500"
+              className="flex items-center justify-center gap-4 w-fit min-h-[75px] bg-white text-black font-semibold p-2 rounded hover:bg-blue-500"
             >
               <div>{game.name}</div>
               <div className="w-[50px]">
@@ -60,11 +60,13 @@ const GamesPage = () => {
         </div>
 
         {/* Game Area */}
-        <div className="p-2 border-4 border-black rounded-md bg-white">
+        <div className="p-2 border-4 border-[#1764c9] rounded-md">
           {selectedGame ? (
             selectedGame
           ) : (
-            <div className="text-center font-bold">Select a game to play</div>
+            <div className="text-center font-bold text-black">
+              Select a game to play
+            </div>
           )}
         </div>
       </div>

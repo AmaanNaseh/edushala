@@ -107,7 +107,7 @@ const ProfilePage = () => {
               value={formData.userFullName}
               onChange={handleInputChange}
               placeholder="Update Full Name"
-              className="p-2 border-[2px] border-black"
+              className="p-2 border-[2px] border-[#1764c9] text-black"
             />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -118,7 +118,7 @@ const ProfilePage = () => {
               value={formData.username}
               onChange={handleInputChange}
               placeholder="Update Username"
-              className="p-2 border-[2px] border-black"
+              className="p-2 border-[2px] border-[#1764c9] text-black"
             />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -129,7 +129,7 @@ const ProfilePage = () => {
               value={formData.password}
               onChange={handleInputChange}
               placeholder="Update Password"
-              className="p-2 border-[2px] border-black"
+              className="p-2 border-[2px] border-[#1764c9] text-black"
             />
           </div>
           <button

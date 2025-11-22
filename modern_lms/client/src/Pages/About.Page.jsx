@@ -25,14 +25,14 @@ const AboutPage = () => {
         Classifier, Mediapipe and Support Vector Machine/Classifier.
       </p>
       <div className="flex flex-wrap gap-20 items-center">
-        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black text-white">
+        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black border-[2px] border-[#1764c9] text-white">
           <h3 className="font-semibold text-xl">Quiz ML model</h3>
           <p>ML : Random Forest Classifier</p>
           <div className="w-[300px]">
             <img src={QuizML} alt="graph" className="w-full" />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black text-white">
+        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black border-[2px] border-[#1764c9] text-white">
           <h3 className="font-semibold text-xl">
             Sign Language Alphabets ML model
           </h3>
@@ -41,7 +41,7 @@ const AboutPage = () => {
             <img src={AlphabetsML} alt="graph" className="w-full" />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black text-white">
+        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black border-[2px] border-[#1764c9] text-white">
           <h3 className="font-semibold text-xl">
             Sign Language Numbers ML model
           </h3>
@@ -50,7 +50,7 @@ const AboutPage = () => {
             <img src={NumbersML} alt="graph" className="w-full" />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black text-white">
+        <div className="flex flex-col items-center justify-center gap-4 p-4 bg-black border-[2px] border-[#1764c9] text-white">
           <h3 className="font-semibold text-xl">Attendance System</h3>
           <p className="w-[300px] text-justify">
             Since it trains everytime for new user dynamically using SVM/SVC,

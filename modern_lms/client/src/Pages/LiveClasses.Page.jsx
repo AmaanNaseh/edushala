@@ -18,7 +18,9 @@ const LiveClassesPage = () => {
             <div className="w-[150px]">
               <img src={GMeetLogo} alt="image" className="w-full" />
             </div>
-            <h3 className="text-center font-bold text-xl">Google Meet</h3>
+            <h3 className="text-center font-bold text-xl text-black">
+              Google Meet
+            </h3>
           </a>
           <a
             target="_blank"
@@ -29,7 +31,7 @@ const LiveClassesPage = () => {
             <div className="w-[150px]">
               <img src={ZoomLogo} alt="image" className="w-full" />
             </div>
-            <h3 className="text-center font-bold text-xl">Zoom</h3>
+            <h3 className="text-center font-bold text-xl text-black">Zoom</h3>
           </a>
           <a
             target="_blank"
@@ -40,7 +42,9 @@ const LiveClassesPage = () => {
             <div className="w-[150px]">
               <img src={WebinarjamLogo} alt="image" className="w-full" />
             </div>
-            <h3 className="text-center font-bold text-xl">Webinar Jam</h3>
+            <h3 className="text-center font-bold text-xl text-black">
+              Webinar Jam
+            </h3>
           </a>
           <a
             target="_blank"
@@ -51,7 +55,7 @@ const LiveClassesPage = () => {
             <div className="w-[150px]">
               <img src={ZohoLogo} alt="image" className="w-full" />
             </div>
-            <h3 className="text-center font-bold text-xl">Zoho</h3>
+            <h3 className="text-center font-bold text-xl text-black">Zoho</h3>
           </a>
         </div>
       </div>

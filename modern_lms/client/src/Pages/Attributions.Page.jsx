@@ -22,7 +22,7 @@ const AttributionsPage = () => {
           Attributions
         </h1>
 
-        <p className="text-justify p-2 mx-4 md:mx-10 lg:mx-16 border-black border-[2px]">
+        <p className="text-justify p-2 mx-4 md:mx-10 lg:mx-16 border-[#1764c9] border-[2px]">
           Some of the image or voice content used in our website belongs to
           following references. We have used the free-tier resources with proper
           attribution and all rights of the free images and voices belong to the

@@ -60,7 +60,7 @@ const BookUpdate = () => {
   return (
     <>
       {oldBook ? (
-        <div className="flex flex-col items-center mx-auto gap-10 my-10 rounded-lg bg-[#F2EFE7] p-8 shadow-black/40 shadow-md w-fit">
+        <div className="flex flex-col items-center mx-auto gap-10 my-10 rounded-lg bg-[#F2EFE7] text-black p-8 shadow-black/40 shadow-md w-fit">
           <div className="flex flex-col items-center gap-2">
             <div className="w-[100px] mx-auto my-4">
               <img src={BookLogo} alt="book" className="w-full" />
@@ -71,7 +71,7 @@ const BookUpdate = () => {
               value={bookname}
               placeholder={oldBook.bookname}
               onChange={(e) => setBookName(e.target.value)}
-              className="border-[1px] px-4 py-1 bg-[#FBFBFB] border-black"
+              className="border-[1px] px-4 py-1 bg-[#FBFBFB] border-black text-black"
             />
           </div>
           <div className="flex flex-col items-center gap-2">
@@ -81,7 +81,7 @@ const BookUpdate = () => {
               value={booksubject}
               placeholder={oldBook.booksubject}
               onChange={(e) => setBookSubject(e.target.value)}
-              className="border-[1px] px-4 py-1 bg-[#FBFBFB] border-black"
+              className="border-[1px] px-4 py-1 bg-[#FBFBFB] border-black text-black"
             />
           </div>
           <div className="flex flex-col items-center gap-2">
@@ -91,7 +91,7 @@ const BookUpdate = () => {
               value={booklink}
               placeholder={oldBook.booklink}
               onChange={(e) => setBookLink(e.target.value)}
-              className="border-[1px] px-4 py-1 bg-[#FBFBFB] border-black"
+              className="border-[1px] px-4 py-1 bg-[#FBFBFB] border-black text-black"
             />
           </div>
           <button

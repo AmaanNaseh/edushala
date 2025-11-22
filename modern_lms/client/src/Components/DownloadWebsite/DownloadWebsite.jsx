@@ -36,7 +36,7 @@ const DownloadWebsite = () => {
   return (
     <button
       onClick={handleInstallClick}
-      className="bg-blue-600 text-white font-semibold p-2 text-[8px] md:text-sm rounded-md hover:scale-105"
+      className="bg-blue-600 text-white font-semibold p-2 text-sm rounded-md hover:scale-105"
     >
       Download Now
     </button>

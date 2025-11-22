@@ -177,7 +177,7 @@ const MemoryMatch = () => {
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(Number(e.target.value))}
-              className="border-[2px] border-black rounded px-3 py-2"
+              className="border-[2px] border-[#1764c9] text-black rounded px-3 py-2"
             >
               <option value={8}>Easy</option>
               <option value={16}>Medium</option>
@@ -223,7 +223,7 @@ const MemoryMatch = () => {
                 }`}
                 onClick={() => handleCardClick(card.id)}
               >
-                <div className="flex items-center justify-center text-2xl">
+                <div className="flex items-center justify-center text-2xl text-black">
                   {card.isFlipped || card.isMatched ? card.symbol : "?"}
                 </div>
               </div>

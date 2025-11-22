@@ -86,7 +86,7 @@ const QuizPage = () => {
         <select
           value={subject}
           onChange={handleSubjectChange}
-          className="px-4 py-2 border-[2px] border-black font-semibold"
+          className="px-4 py-2 border-[2px] border-[#1764c9] text-black font-semibold"
         >
           <option value="english">English</option>
           <option value="maths">Maths</option>
@@ -95,7 +95,7 @@ const QuizPage = () => {
       </div>
 
       {!isQuizComplete ? (
-        <div className="p-6 rounded-lg border-[2px] border-black/50 shadow-md shadow-black/50 space-y-4 w-fit mx-auto">
+        <div className="p-6 rounded-lg border-[2px] border-[#1764c9] shadow-md shadow-black/50 space-y-4 w-fit mx-auto">
           <h2 className="text-xl font-semibold">
             Question {currentQuestionIndex + 1} of {questions.length}
           </h2>
@@ -115,7 +115,7 @@ const QuizPage = () => {
           </div>
         </div>
       ) : (
-        <div className="px-8 py-12 rounded-lg border-[2px] border-black/50 shadow-md shadow-black/50 space-y-4 w-fit mx-auto">
+        <div className="px-8 py-12 rounded-lg border-[2px] border-[#1764c9] shadow-md shadow-black/50 space-y-4 w-fit mx-auto">
           <h2 className="text-2xl font-bold">Quiz Complete!</h2>
           <p className="text-xl flex items-center justify-center">
             <span className="font-semibold mr-4">Subject:</span>{" "}

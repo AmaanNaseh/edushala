@@ -23,7 +23,7 @@ const ShortcutsPage = () => {
           <div className="transform scale-[0.4] md:scale-75 lg:scale-80 flex flex-col gap-2 md:gap-8 items-center justify-center max-w-full">
             <VirtualKeyboard keyId={"Shift F1"} />
           </div>
-          <h2 className="text-black text-lg md:text-2xl text-center">
+          <h2 className="text-lg md:text-2xl text-center">
             To activate Keyboard cursor, Press{" "}
             <span className="font-bold">Shift + F1</span> twice & to cancel,
             again press twice
@@ -33,7 +33,7 @@ const ShortcutsPage = () => {
           <div className="transform scale-[0.4] md:scale-75 lg:scale-80 flex flex-col gap-2 md:gap-8 items-center justify-center max-w-full">
             <VirtualKeyboard keyId={"Shift F2"} />
           </div>
-          <h2 className="text-black text-lg md:text-2xl text-center">
+          <h2 className="text-lg md:text-2xl text-center">
             To activate Voice cursor, Press{" "}
             <span className="font-bold">Shift + F2</span> twice & to cancel,
             again press twice
@@ -43,7 +43,7 @@ const ShortcutsPage = () => {
           <div className="transform scale-[0.4] md:scale-75 lg:scale-80 flex flex-col gap-2 md:gap-8 items-center justify-center max-w-full">
             <VirtualKeyboard keyId={"Shift Space"} />
           </div>
-          <h2 className="text-black text-lg md:text-2xl text-center">
+          <h2 className="text-lg md:text-2xl text-center">
             To activate Screen Reader, Press{" "}
             <span className="font-bold">Shift + Space</span> & to cancel, press
             again
@@ -53,7 +53,7 @@ const ShortcutsPage = () => {
           <div className="transform scale-[0.4] md:scale-75 lg:scale-80 flex flex-col gap-2 md:gap-8 items-center justify-center max-w-full">
             <VirtualKeyboard keyId={"Shift +"} />
           </div>
-          <h2 className="text-black text-lg md:text-2xl text-center">
+          <h2 className="text-lg md:text-2xl text-center">
             To activate Magnifier, Press{" "}
             <span className="font-bold">Shift and +</span> & to cancel, press
             again
@@ -68,7 +68,7 @@ const ShortcutsPage = () => {
           <div className="transform scale-[0.8] md:scale-100 flex flex-col gap-2 md:gap-8 items-center justify-center max-w-full">
             <VirtualNumpad blinkKeys={[10, 16]} />
           </div>
-          <ul className="text-black text-sm md:text-md lg:text-xl flex flex-col gap-2 list-none">
+          <ul className="text-sm md:text-md lg:text-xl flex flex-col gap-2 list-none">
             <li>
               <span className="font-bold mr-4">Enter</span> Press 2 times to
               start speaking & again 2 times for stopping
@@ -92,7 +92,7 @@ const ShortcutsPage = () => {
               ]}
             />
           </div>
-          <ul className="text-black text-sm md:text-md lg:text-xl flex flex-col gap-2 list-none">
+          <ul className="text-sm md:text-md lg:text-xl flex flex-col gap-2 list-none">
             <li>
               <span className="font-bold mr-4">*</span> 3 times for Instructions
               & again 3 times for stopping.

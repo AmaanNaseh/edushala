@@ -41,7 +41,7 @@ const ElibraryPage = () => {
             return (
               <div
                 key={key}
-                className="my-[10px] mx-2 flex flex-col flex-wrap gap-2 rounded-lg bg-[#F2EFE7] p-4 shadow-black/40 shadow-md"
+                className="my-[10px] mx-2 flex flex-col flex-wrap gap-2 rounded-lg bg-[#F2EFE7] text-black p-4 shadow-black/40 shadow-md"
               >
                 <div className="w-[100px] mx-auto my-2">
                   <img src={book.image} alt="book" className="w-full" />
@@ -83,7 +83,7 @@ const ElibraryPage = () => {
           {books.map((book) => (
             <div
               key={book._id}
-              className="my-[10px] mx-2 flex flex-col flex-wrap items-center  gap-4 rounded-lg bg-[#F2EFE7] p-4 shadow-black/40 shadow-md"
+              className="my-[10px] mx-2 flex flex-col flex-wrap items-center  gap-4 rounded-lg bg-[#F2EFE7] text-black p-4 shadow-black/40 shadow-md"
             >
               <div className="w-[100px] mx-auto my-2">
                 <img src={BookLogo} alt="book" className="w-full" />

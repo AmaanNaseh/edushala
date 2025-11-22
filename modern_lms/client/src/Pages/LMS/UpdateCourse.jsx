@@ -106,7 +106,7 @@ const UpdateCourse = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            className="w-full border border-gray-300 p-3 rounded-md"
+            className="w-full border border-gray-300 p-3 rounded-md text-black"
           />
         </div>
         <div>
@@ -115,7 +115,7 @@ const UpdateCourse = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
-            className="w-full resize-none border border-gray-300 p-3 rounded-md"
+            className="w-full resize-none border border-gray-300 p-3 rounded-md text-black"
             rows="4"
             placeholder="Course description..."
           />
@@ -128,7 +128,7 @@ const UpdateCourse = () => {
               value={newModule}
               onChange={(e) => setNewModule(e.target.value)}
               placeholder="Module Title"
-              className="border border-gray-300 p-3 rounded-md flex-grow"
+              className="border border-gray-300 p-3 rounded-md flex-grow text-black"
             />
             <button
               type="button"
@@ -142,7 +142,7 @@ const UpdateCourse = () => {
           {modules.map((module, index) => (
             <div
               key={index}
-              className="bg-gray-100 p-4 rounded-md shadow-md mb-4"
+              className="bg-gray-100 text-black p-4 rounded-md shadow-md mb-4"
             >
               <div className="flex items-center justify-between">
                 <h4 className="text-lg font-bold">{module.moduleTitle}</h4>
@@ -156,7 +156,7 @@ const UpdateCourse = () => {
                     setNewLecture({ ...newLecture, label: e.target.value })
                   }
                   placeholder="Lecture Label"
-                  className="border border-gray-300 p-3 rounded-md flex-grow"
+                  className="border border-gray-300 p-3 rounded-md flex-grow text-black"
                 />
                 <input
                   type="url"
@@ -168,7 +168,7 @@ const UpdateCourse = () => {
                     })
                   }
                   placeholder="Youtube Video Link Only"
-                  className="border border-gray-300 p-3 rounded-md flex-grow"
+                  className="border border-gray-300 p-3 rounded-md flex-grow text-black"
                 />
                 <button
                   type="button"

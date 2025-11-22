@@ -47,18 +47,20 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h1 className="text-lg font-semibold">Quick Links</h1>
             <ul className="flex flex-col gap-4 text-sm">
+              <Link to={"/about"}>
+                <li className="hover:underline">About</li>
+              </Link>
               <Link to={"/attributions"}>
                 <li className="hover:underline">Attributions</li>
               </Link>
               <Link to={"/shortcuts"}>
                 <li className="hover:underline">Shortcuts</li>
               </Link>
+
               <a href={Brochure} download>
                 <li className="hover:underline">Brochure</li>
               </a>
-              <Link to={"/about"}>
-                <li className="hover:underline">About</li>
-              </Link>
+
               <a
                 href="https://github.com/AmaanNaseh/edushala"
                 target="_blank"
@@ -77,7 +79,7 @@ const Footer = () => {
               className="flex flex-col items-center justify-center text-sm gap-4 text-black"
             >
               <input
-                className="px-4 py-2 w-full"
+                className="px-4 py-2 w-full text-black"
                 type="email"
                 name="email"
                 id="email"
@@ -88,7 +90,7 @@ const Footer = () => {
               <textarea
                 name="message"
                 id="message"
-                className="resize-none px-4 py-2 w-full"
+                className="resize-none px-4 py-2 w-full text-black"
                 placeholder="Message"
                 required
               ></textarea>

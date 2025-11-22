@@ -139,7 +139,7 @@ const TimeManagementPage = () => {
             onChange={handleStudyHoursChange}
             min="0"
             max="12"
-            className="px-4 py-2 border-[2px] border-black"
+            className="px-4 py-2 border-[2px] border-[#1764c9] text-black"
           />
         </div>
         <button
@@ -151,7 +151,7 @@ const TimeManagementPage = () => {
       </div>
 
       {submittedHours && studyHours > 0 && (
-        <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex items-center justify-center mx-auto my-8 border-[2px] border-black p-4 shadow-sm shadow-black/30">
+        <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex items-center justify-center mx-auto my-8 border-[2px] border-[#1764c9] p-4 shadow-sm shadow-black/30">
           <Pie data={pieChartData} options={options} />
         </div>
       )}

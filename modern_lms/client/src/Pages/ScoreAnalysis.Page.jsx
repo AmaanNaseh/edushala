@@ -62,19 +62,19 @@ const ScoreAnalysisPage = () => {
           Score Analysis
         </h1>
         <div className="overflow-x-auto">
-          <table className="table-auto w-full text-[8px] md:text-[16px] border-collapse border-[2px] border-black">
+          <table className="table-auto w-full text-[8px] md:text-[16px] border-collapse border-[2px] border-[#1764c9]">
             <thead>
               <tr>
-                <th className="border-[2px] border-black px-2 md:px-4 py-2">
+                <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   Subject
                 </th>
-                <th className="border-[2px] border-black px-2 md:px-4 py-2">
+                <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   Total Marks
                 </th>
-                <th className="border-[2px] border-black px-2 md:px-4 py-2">
+                <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   Obtained Marks
                 </th>
-                <th className="border-[2px] border-black px-2 md:px-4 py-2">
+                <th className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                   Percentage
                 </th>
               </tr>
@@ -92,7 +92,7 @@ const ScoreAnalysisPage = () => {
 
                 return (
                   <tr key={index}>
-                    <td className="border-[2px] border-black px-2 md:px-4 py-2">
+                    <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                       <input
                         type="text"
                         placeholder="Subject Name"
@@ -100,10 +100,10 @@ const ScoreAnalysisPage = () => {
                         onChange={(e) =>
                           handleInputChange(index, "name", e.target.value)
                         }
-                        className="w-full p-2 border-[2px] border-black"
+                        className="w-full p-2 border-[2px] border-[#1764c9] text-black"
                       />
                     </td>
-                    <td className="border-[2px] border-black px-2 md:px-4 py-2">
+                    <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                       <input
                         type="number"
                         placeholder="Total Marks"
@@ -115,10 +115,10 @@ const ScoreAnalysisPage = () => {
                             Math.max(0, e.target.value)
                           )
                         }
-                        className="w-full p-2 border-[2px] border-black"
+                        className="w-full p-2 border-[2px] border-[#1764c9] text-black"
                       />
                     </td>
-                    <td className="border-[2px] border-black px-2 md:px-4 py-2">
+                    <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2">
                       <input
                         type="number"
                         placeholder="Obtained Marks"
@@ -130,32 +130,32 @@ const ScoreAnalysisPage = () => {
                             Math.max(0, e.target.value)
                           )
                         }
-                        className="w-full p-2 border-[2px] border-black"
+                        className="w-full p-2 border-[2px] border-[#1764c9] text-black"
                       />
                     </td>
-                    <td className="border-[2px] border-black px-2 md:px-4 py-2 text-center">
+                    <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-center">
                       {subjectPercentage}%
                     </td>
                   </tr>
                 );
               })}
               <tr className="font-bold">
-                <td className="border-[2px] border-black px-2 md:px-4 py-2 text-right">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-right">
                   Total
                 </td>
-                <td className="border-[2px] border-black px-2 md:px-4 py-2 text-center">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-center">
                   {subjects.reduce(
                     (acc, subject) => acc + Number(subject.totalMarks || 0),
                     0
                   )}
                 </td>
-                <td className="border-[2px] border-black px-2 md:px-4 py-2 text-center">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-center">
                   {subjects.reduce(
                     (acc, subject) => acc + Number(subject.obtainedMarks || 0),
                     0
                   )}
                 </td>
-                <td className="border-[2px] border-black px-2 md:px-4 py-2 text-center">
+                <td className="border-[2px] border-[#1764c9] px-2 md:px-4 py-2 text-center">
                   {totalPercentage}%
                 </td>
               </tr>

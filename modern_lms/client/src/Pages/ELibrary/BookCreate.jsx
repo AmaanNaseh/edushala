@@ -61,21 +61,21 @@ const BookCreate = () => {
         placeholder="Enter Book Name"
         value={bookname}
         onChange={(e) => setBookName(e.target.value)}
-        className="border px-4 py-2 bg-[#FBFBFB] border-black w-full"
+        className="border px-4 py-2 bg-[#FBFBFB] border-black w-full text-black"
       />
       <input
         type="text"
         placeholder="Enter Book Subject"
         value={booksubject}
         onChange={(e) => setBookSubject(e.target.value)}
-        className="border px-4 py-2 bg-[#FBFBFB] border-black w-full"
+        className="border px-4 py-2 bg-[#FBFBFB] border-black w-full text-black"
       />
       <input
         type="text"
         placeholder="Enter Book's Link"
         value={booklink}
         onChange={(e) => setBookLink(e.target.value)}
-        className="border px-4 py-2 bg-[#FBFBFB] border-black w-full"
+        className="border px-4 py-2 bg-[#FBFBFB] border-black w-full text-black"
       />
       <button
         className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"

@@ -154,7 +154,7 @@ const Sudoku = () => {
           <select
             value={level}
             onChange={handleLevelChange}
-            className="font-semibold text-xl px-4 py-2 border-[2px] border-black"
+            className="font-semibold text-xl px-4 py-2 border-[2px] border-[#1764c9] text-black"
           >
             <option value="Easy">Easy</option>
             <option value="Medium">Medium</option>
@@ -192,7 +192,7 @@ const Sudoku = () => {
                   onChange={(e) =>
                     handleChange(rowIndex, colIndex, e.target.value)
                   }
-                  className="w-[40px] h-[40px] md:w-16 md:h-16 lg:w-20 lg:h-20 text-center border-[2px] border-black"
+                  className="w-[40px] h-[40px] md:w-16 md:h-16 lg:w-20 lg:h-20 text-center border-[2px] border-[#1764c9] text-black"
                 />
               ))
             )}

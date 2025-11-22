@@ -124,7 +124,7 @@ const WordsColorMatch = () => {
       </h1>
 
       <div className="flex flex-col items-center justify-center gap-8">
-        <p className="text-black font-bold text-xl">Level: {level}</p>
+        <p className="font-bold text-xl">Level: {level}</p>
 
         <div className="grid gap-4 md:gap-6 lg:gap-8 mb-4 grid-cols-4">
           {sequence.map((item, index) => (
@@ -160,7 +160,7 @@ const WordsColorMatch = () => {
             <button
               key={index}
               onClick={() => handleColorClick(color)}
-              className="py-2 px-4 bg-black text-white text-lg md:text-xl lg:text-2xl font-bold rounded-md focus:outline-none"
+              className="py-2 px-4 bg-[#1764c9] text-white text-lg md:text-xl lg:text-2xl font-bold rounded-md focus:outline-none"
             >
               {color}
             </button>

@@ -177,7 +177,7 @@ const DigitalOrbitWriterPage = () => {
         <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl bg-bluegradientR bg-clip-text text-transparent text-center italic my-4 md:my-7">
           Digital Orbit Writer
         </h1>
-        <p className="text-black text-justify mx-8 font-semibold">
+        <p className="text-justify mx-8 font-semibold">
           Instructions: Press keys 1-26 for alphabets in sequence (1 and 2 digit
           numbers only), hit Enter to confirm, hit Space for space, hit dot to
           delete the last number in the pattern, and hit + to remove the last

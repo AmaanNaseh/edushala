@@ -4,19 +4,27 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" >![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC%204.0-brightgreen) </a>
 
+---
+
 ## Live Website:
 
 <a href="https://edushala.vercel.app" target="_blank" >![Image](https://github.com/user-attachments/assets/00c0deb9-de02-4480-8058-c54dae53e2cc) https://edushala.vercel.app</a>
 
+---
+
 ## Youtube Video:
 
 <a href="https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_" target="_blank" >![Image](https://github.com/user-attachments/assets/f584d4b1-9605-4759-9748-f95a93a7ef5f) https://youtu.be/_jCDPb56rGI?si=iBfP1QvtxJJlPeb_</a>
+
+---
 
 ## Developers:
 
 - <a href="https://github.com/AmaanNaseh" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) Amaan Naseh</a>
 - <a href="https://github.com/abdulwaheedal" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) Abdul Waheed Al Faaiz</a>
 - <a href="https://github.com/Mrmak2003" target="_blank" >![Image](https://github.com/user-attachments/assets/15f358b7-4d74-4f7b-b4f5-5d68d786a0af) Mudassir Ahmed Khan</a>
+
+---
 
 ## HackJMI25 Winners
 
@@ -26,6 +34,8 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 <p align="center">
   <img src="https://github.com/user-attachments/assets/73c295b7-d203-48c5-83e9-b0b06986653b" alt="Image" />
 </p>
+
+---
 
 ## Features:
 
@@ -44,15 +54,19 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 - Accessibility & Shortcuts : Bi-Lingual (Hindi/English), Smart Cursor Navigation, Screen Reader, Screen Magnifier, Voice to Text & Digital Orbit Writer
 - EduTypeVision : Hardware for blind people to access our website easily & use our digital orbit writer
 
+---
+
 ## Tech stack
 
 ![Image](https://github.com/user-attachments/assets/7090647d-8d7d-4654-9c76-d3cd7592ba89)
 
+---
+
 ## Steps to run this project:
 
-#### Check the video 11:52 here: <a href="https://youtu.be/_jCDPb56rGI?si=Scb1t1v1tLoGFtzx&t=712" target="_blank" >Setup Guide</a>
+**Check the video 11:52 here:** <a href="https://youtu.be/_jCDPb56rGI?si=Scb1t1v1tLoGFtzx&t=712" target="_blank" >Setup Guide</a>
 
-#### Note: Make sure you have installed <a href="https://git-scm.com/downloads" target="_blank" >Git</a>, <a href="https://code.visualstudio.com/download" target="_blank" >VS Code</a>, <a href="https://nodejs.org/en/download" target="_blank" >Node.js</a> and <a href="https://www.python.org/downloads/release/python-3116/" target="_blank" >Python (3.11.6 Recommended)</a> in your system
+**Note:** Make sure you have installed <a href="https://git-scm.com/downloads" target="_blank" >Git</a>, <a href="https://code.visualstudio.com/download" target="_blank" >VS Code</a>, <a href="https://nodejs.org/en/download" target="_blank" >Node.js</a> and <a href="https://www.python.org/downloads/release/python-3116/" target="_blank" >Python (3.11.6 Recommended)</a> in your system
 
 ### 1. Clone the repository:
 
@@ -64,11 +78,15 @@ or
 
 ### Code > Download Zip > Extract edushala-master
 
+---
+
 ### 2. Open edushala (cloned folder) or edushala-master (downloaded zip's extracted folder) in VS Code or other code editor
 
 ```bash
 Ctrl + K + O
 ```
+
+---
 
 ### 3. Create a Virtual Environment in edushala or edushala-master (Optional but Recommended if Steps 4 (i), 4 (ii) & 4 (iii) shows error)
 
@@ -82,9 +100,11 @@ Ctrl + Shift + P (to select python interpreter)
 
 (iii) Once done, follow steps below in given sequence
 
+---
+
 ### 4. Open 6 different terminals in VS Code/IDE, install dependencies & run development server
 
-(i) Attendance system backend
+(i) **Attendance system backend**
 
 ```bash
 .venv/scripts/activate
@@ -106,7 +126,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-(ii) Sign language system backend
+(ii) **Sign language system backend**
 
 ```bash
 .venv/scripts/activate
@@ -128,7 +148,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-(iii) ML Quiz Analyzer
+(iii) **ML Quiz Analyzer**
 
 ```bash
 .venv/scripts/activate
@@ -150,7 +170,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-(iv) AI Question generator
+(iv) **AI Question generator**
 
 ```bash
 cd q_generator
@@ -164,7 +184,7 @@ npm install
 npm run dev
 ```
 
-(v) full stack website backend
+(v) **full stack website backend**
 
 ```bash
 cd modern_lms/backend
@@ -178,7 +198,7 @@ npm install
 npm run dev
 ```
 
-(vi) full stack website client
+(vi) **full stack website client**
 
 ```bash
 cd modern_lms/client
@@ -193,6 +213,8 @@ npm run dev
 ```
 
 ### 5. Access website (only after running everything above) at: http://localhost:5173
+
+---
 
 ## Preview of our website
 
@@ -212,6 +234,8 @@ npm run dev
 ![Image](https://github.com/user-attachments/assets/46a3173e-1112-450e-a5f5-ee79247503b1)
 ![Image](https://github.com/user-attachments/assets/da636a4d-9f09-41ad-be3e-d252b6b50960)
 ![Image](https://github.com/user-attachments/assets/7a3cca46-86c4-45fe-bf1f-40b1c21af7f3)
+
+---
 
 ## Attributions of code inspiration
 

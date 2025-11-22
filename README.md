@@ -76,17 +76,13 @@ git clone https://github.com/AmaanNaseh/edushala.git
 
 or
 
-### Code > Download Zip > Extract edushala-master
-
----
+**Code > Download Zip > Extract edushala-master**
 
 ### 2. Open edushala (cloned folder) or edushala-master (downloaded zip's extracted folder) in VS Code or other code editor
 
 ```bash
 Ctrl + K + O
 ```
-
----
 
 ### 3. Create a Virtual Environment in edushala or edushala-master (Optional but Recommended if Steps 4 (i), 4 (ii) & 4 (iii) shows error)
 
@@ -100,29 +96,15 @@ Ctrl + Shift + P (to select python interpreter)
 
 (iii) Once done, follow steps below in given sequence
 
----
-
 ### 4. Open 6 different terminals in VS Code/IDE, install dependencies & run development server
 
 (i) **Attendance system backend**
 
 ```bash
 .venv/scripts/activate
-```
-
-```bash
 set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-```bash
 cd flask_attendance_system
-```
-
-```bash
 pip install -r requirements.txt
-```
-
-```bash
 python app.py
 ```
 
@@ -130,21 +112,9 @@ python app.py
 
 ```bash
 .venv/scripts/activate
-```
-
-```bash
 set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-```bash
 cd flask_sign_language
-```
-
-```bash
 pip install -r requirements.txt
-```
-
-```bash
 python app.py
 ```
 
@@ -152,21 +122,9 @@ python app.py
 
 ```bash
 .venv/scripts/activate
-```
-
-```bash
 set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-```bash
 cd flask_adaptive_quiz
-```
-
-```bash
 pip install -r requirements.txt
-```
-
-```bash
 python app.py
 ```
 
@@ -174,13 +132,7 @@ python app.py
 
 ```bash
 cd q_generator
-```
-
-```bash
 npm install
-```
-
-```bash
 npm run dev
 ```
 
@@ -188,13 +140,7 @@ npm run dev
 
 ```bash
 cd modern_lms/backend
-```
-
-```bash
 npm install
-```
-
-```bash
 npm run dev
 ```
 
@@ -202,13 +148,7 @@ npm run dev
 
 ```bash
 cd modern_lms/client
-```
-
-```bash
 npm install
-```
-
-```bash
 npm run dev
 ```
 

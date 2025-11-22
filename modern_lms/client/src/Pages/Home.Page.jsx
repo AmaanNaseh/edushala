@@ -8,8 +8,6 @@ import {
   question_generator_API,
 } from "../Config/Config";
 
-import HomePoster from "../Assets/HomePage/HomePoster.png";
-
 import AttendanceSystemLogo from "../Assets/HomePage/AttendanceSystem.png";
 import LiveClassesLogo from "../Assets/HomePage/LiveClasses.png";
 import SelfPacedCoursesLogo from "../Assets/HomePage/SelfPacedCourses.png";
@@ -41,6 +39,7 @@ import WordsColorMatchLogo from "../Assets/HomePage/WordsColorMatch.png";
 import VoiceMatchLogo from "../Assets/HomePage/VoiceMatch.png";
 import SolveMazeLogo from "../Assets/HomePage/SolveMaze.png";
 import SudokuLogo from "../Assets/HomePage/Sudoku.png";
+import { HeroSection } from "../Components/HeroSection/HeroSection";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -51,29 +50,11 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4 bg-[#e9f3fd] py-6">
-        <h1 className="font-bold text-center text-3xl md:text-4xl lg:text-7xl text-[#1d2b46]">
-          <span className="bg-bluegradientR bg-clip-text text-transparent mr-2 lg:mr-4">
-            Learn
-          </span>
-          Anything, Anytime, Anywhere
-        </h1>
-        <p className="text-[#1d2b46] font-semibold text-center mx-8 md:mx-12 lg:mx-auto">
-          Access high-quality courses from expert instructors and join a
-          community of lifelong learners.
-        </p>
-        <div className="mx-auto w-[300px] lg:w-[560px]">
-          <img src={HomePoster} alt="home poster" className="w-full" />
-        </div>
-        <div className="flex items-center gap-10">
-          <Link to={"/signup"}>
-            <button className="bg-bluegradientR hover:scale-105 text-white font-semibold mx-auto my-4 w-fit px-4 py-3 border-none outline-none rounded-[36px]">
-              Get Started
-            </button>
-          </Link>
-        </div>
-      </div>
-      <div className="m-10">
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* What We Offer */}
+      <div className="m-10 my-16">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           What we offer
         </h1>
@@ -202,6 +183,8 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
+
+      {/* Adaptive Learning */}
       <div className="m-10 my-16">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Adaptive Learning Platform
@@ -254,6 +237,7 @@ const HomePage = () => {
         </div>
       </div>
 
+      {/* Special Education */}
       <div className="m-10 my-16">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Special Education for Disabled Students
@@ -335,6 +319,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      {/* Neurodivergent Exercises */}
       <div className="m-10 my-16">
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Special Exercises for Neurodivergent Students

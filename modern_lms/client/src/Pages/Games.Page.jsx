@@ -41,7 +41,7 @@ const GamesPage = () => {
   ];
 
   return (
-    <div className="bg-black min-h-[100vh]">
+    <div>
       <div className="flex flex-col items-center justify-center gap-12 py-10 mx-4">
         {/* Game Name List */}
         <div className="flex flex-col md:flex-row flex-wrap items-center gap-8">
@@ -49,10 +49,10 @@ const GamesPage = () => {
             <button
               key={index}
               onClick={() => setSelectedGame(game.component)}
-              className="flex items-center justify-center gap-4 min-w-[315px] min-h-[120px] text-lg bg-white font-semibold p-2 rounded hover:bg-blue-500"
+              className="flex items-center justify-center gap-4 w-fit min-h-[75px] bg-white font-semibold p-2 rounded hover:bg-blue-500"
             >
               <div>{game.name}</div>
-              <div className="w-[100px]">
+              <div className="w-[50px]">
                 <img src={game.logo} alt={game.name} className="w-full" />
               </div>
             </button>

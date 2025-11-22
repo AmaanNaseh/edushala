@@ -78,7 +78,7 @@ const BookCreate = () => {
         className="border px-4 py-2 bg-[#FBFBFB] border-black w-full"
       />
       <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg"
+        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
         onClick={createBook}
         disabled={loading}
       >

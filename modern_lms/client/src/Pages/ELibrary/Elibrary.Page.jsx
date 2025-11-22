@@ -71,7 +71,7 @@ const ElibraryPage = () => {
         </h1>
         {role === "admin" ? (
           <Link to={"/api/create-book"}>
-            <button className="text-white py-2 px-4 font-bold rounded-[12px] bg-black hover:scale-105 hover:bg-black/75 mx-auto my-8 w-fit">
+            <button className="text-white py-2 px-4 font-bold rounded bg-bluegradientR hover:scale-105 hover:bg-black/75 mx-auto my-8 w-fit">
               Create New Book
             </button>
           </Link>

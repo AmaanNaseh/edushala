@@ -61,7 +61,7 @@ const BookDelete = () => {
             {book.adminName}
           </h3>
           <button
-            className="bg-[#F93827] hover:scale-105 text-white font-semibold mx-auto w-fit px-3 py-1 rounded-[5px] text-2xl hover:bg-[#FA5D4F]"
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded"
             onClick={deleteBook}
           >
             Delete Book

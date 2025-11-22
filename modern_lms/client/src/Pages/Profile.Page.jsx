@@ -31,6 +31,8 @@ const ProfilePage = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("loginTime");
+    localStorage.removeItem("role");
     navigate("/login");
   };
 
@@ -76,7 +78,7 @@ const ProfilePage = () => {
       <h1 className="font-bold italic text-2xl md:text-3xl lg:text-5xl bg-bluegradientR bg-clip-text text-transparent text-center my-4 md:my-7">
         Welcome, {user.userFullName}
       </h1>
-      <div className="flex flex-col lg:flex-row flex-wrap items-center lg:items-start justify-center gap-8 lg:gap-40 py-10 px-4 rounded-md shadow-lg shadow-black/50 bg-[#F5F5F5]">
+      <div className="flex flex-col lg:flex-row flex-wrap items-center lg:items-start justify-center gap-8 lg:gap-40 py-10 px-4">
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl text-center my-4 font-bold">
             Account details

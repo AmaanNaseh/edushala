@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import {
   attendance_backend_API,
   quiz_backend_API,
@@ -8,12 +10,14 @@ import {
 
 import { FaUserGraduate } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link, useNavigate } from "react-router-dom";
 import { FaMobile } from "react-icons/fa6";
 import { FaLaptop } from "react-icons/fa";
-import { MdLogout } from "react-icons/md";
+import { MdLogout, MdOutlineClose } from "react-icons/md";
+import { IoMdArrowDown } from "react-icons/io";
 
 import Brochure from "../../Assets/BrochurePage/Brochure.pdf";
+import GTranslator from "../GTranslator/GTranslator";
+import DownloadWebsite from "../DownloadWebsite/DownloadWebsite";
 
 const Navbar = ({
   isCursorActive,
@@ -26,13 +30,15 @@ const Navbar = ({
   setSynthActive,
   isVisible,
   setIsVisible,
+  language,
+  setLanguage,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSideNav, setIsSideNav] = useState(false);
-  const [isFeaturesHover, setIsFeaturesHover] = useState(false);
   const [isFeatures, setIsFeatures] = useState(false);
 
   const navigate = useNavigate();
+  const token = localStorage.getItem("authToken");
 
   const handleShortcutsNavigation = (scrollValue) => {
     navigate("/shortcuts", { state: { scrollTo: { y: scrollValue } } });
@@ -59,58 +65,70 @@ const Navbar = ({
   return (
     <>
       <nav
-        className={`flex items-center justify-between gap-10 p-4 shadow-md shadow-black/50 text-white bg-[#1674c9] sticky top-0 left-0 w-[100%] z-30 ${
-          isScrolled ? "rounded-full top-[6px] w-[98%] mx-auto" : ""
+        className={`flex items-center justify-between gap-10 p-4 shadow-md shadow-black/50 bg-[#ffffff] sticky top-0 left-0 w-[100%] z-30 ${
+          isScrolled ? "" : ""
         }`}
       >
-        <div className="flex gap-16">
-          <Link className="hover:scale-105" to={"/"}>
-            <div className="flex items-center gap-2">
-              <FaUserGraduate className="text-3xl" />
-              <h3 className="text-2xl font-bold">EduShala</h3>
-            </div>
-          </Link>
-          <ul className="hidden lg:inline-flex gap-4 items-center text-lg font-semibold ">
+        <Link className="hover:scale-105" to={"/"}>
+          <div className="flex items-center gap-2">
+            <FaUserGraduate className="text-3xl text-[#1674c9]" />
+            <h3 className="hidden md:block text-2xl font-bold">EduShala</h3>
+          </div>
+        </Link>
+
+        <div className="flex items-center justify-center gap-10">
+          <ul className="hidden lg:inline-flex gap-4 items-center text-lg ">
             <li
-              onMouseEnter={() => setIsFeaturesHover(true)}
-              onMouseLeave={() => setIsFeaturesHover(false)}
               onClick={() => {
                 setIsFeatures(!isFeatures);
               }}
-              className="hover:cursor-pointer hover:scale-105"
+              className={`cursor-pointer flex items-center justify-center gap-2 ${
+                isFeatures ? "font-semibold" : ""
+              }`}
             >
-              Features
+              Features{" "}
+              <IoMdArrowDown className="text-xl rounded-full border-[2px] border-black font-bold hover:scale-105" />
             </li>
-            <Link to={"/shortcuts"}>
-              <li className="hover:scale-105">Shortcuts</li>
-            </Link>
-            <a href={Brochure} download>
-              <li className="hover:scale-105">Brochure</li>
-            </a>
-            <Link to={"/about"}>
-              <li className="hover:scale-105">About</li>
-            </Link>
           </ul>
+
+          <GTranslator language={language} setLanguage={setLanguage} />
+          <DownloadWebsite />
         </div>
 
-        {isFeaturesHover || isFeatures ? (
-          <div className="hidden lg:flex flex-row fixed top-[80px] left-0 right-0 z-20 bg-[#ffffff] shadow-lg shadow-black/50 text-black">
+        {/* Large Screens Features  */}
+        {isFeatures ? (
+          <div className="hidden lg:flex flex-row fixed top-[71px] left-0 right-0 z-20 bg-[#ffffff] border-t-[2px] border-t-black shadow-lg shadow-black/50 text-black">
             <div className="p-8 flex flex-wrap gap-8 items-start w-[80%]">
               <ul className="list-none flex flex-col gap-2 text-[13px]">
                 <li className="my-4 font-bold text-lg">Core Features</li>
 
                 <Link to={"/self-paced-courses"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Self paced courses
                   </li>
                 </Link>
                 <Link to={"/e-library"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Digital Library
                   </li>
                 </Link>
                 <Link to={"live-classes"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Live Classes
                   </li>
                 </Link>
@@ -119,17 +137,32 @@ const Navbar = ({
                   rel="noreferrer"
                   href={`${question_generator_API}`}
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Exam Preparation
                   </li>
                 </a>
                 <Link to={"/score-analysis"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Score Analysis
                   </li>
                 </Link>
                 <Link to={"/cgpa-calculator"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     CGPA Calculator
                   </li>
                 </Link>
@@ -141,7 +174,12 @@ const Navbar = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Digital Attendance System
                   </li>
                 </a>
@@ -150,7 +188,12 @@ const Navbar = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Sign Language Tutorials
                   </li>
                 </a>
@@ -159,7 +202,12 @@ const Navbar = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     AI Doubt Solver
                   </li>
                 </a>
@@ -168,7 +216,12 @@ const Navbar = ({
                   rel="noreferrer"
                   href={`${question_generator_API}`}
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     AI Question Generator
                   </li>
                 </a>
@@ -177,12 +230,22 @@ const Navbar = ({
               <ul className="list-none flex flex-col gap-2 text-[13px]">
                 <li className="my-4 font-bold text-lg">Adaptive Learning</li>
                 <Link to={"/dashboard"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Dashboard
                   </li>
                 </Link>
                 <Link to={"/quiz"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Quiz
                   </li>
                 </Link>
@@ -191,12 +254,22 @@ const Navbar = ({
                   rel="noreferrer"
                   href={`${quiz_backend_API}`}
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Quiz Score Analyzer
                   </li>
                 </a>
                 <Link to={"/time-management"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Time Management System
                   </li>
                 </Link>
@@ -209,7 +282,12 @@ const Navbar = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Sign Language Alphabets
                   </li>
                 </a>
@@ -218,12 +296,22 @@ const Navbar = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Sign Language Numbers
                   </li>
                 </a>
                 <Link to={"/digital-orbit-writer"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Digital Orbit Writer
                   </li>
                 </Link>
@@ -232,78 +320,130 @@ const Navbar = ({
               <ul className="list-none flex flex-col gap-2 text-[13px]">
                 <li className="my-4 font-bold text-lg">Gamified Learning</li>
                 <Link to={"/games/bingo"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Bingo
                   </li>
                 </Link>
                 <Link to={"/games/sudoku"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Sudoku
                   </li>
                 </Link>
                 <Link to={"/games/maze"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Maze
                   </li>
                 </Link>
                 <Link to={"/games/memory-match"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Memory Match
                   </li>
                 </Link>
                 <Link to={"/games/words-color-match"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Words Color Match
                   </li>
                 </Link>
                 <Link to={"/games/voice-match"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Voice Match
                   </li>
                 </Link>
               </ul>
 
               <ul className="list-none flex flex-col gap-2 text-[13px]">
-                <li className="my-4 font-bold text-lg">
-                  Accessibility & Shortcuts
-                </li>
+                <li className="my-4 font-bold text-lg">Shortcuts</li>
                 <li
                   onClick={() => {
                     handleShortcutsNavigation(100);
+                    setIsFeatures(false);
                   }}
-                  className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black"
+                  className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
                 >
                   Keyboard Cursor
                 </li>
                 <li
                   onClick={() => {
                     handleShortcutsNavigation(100);
+                    setIsFeatures(false);
                   }}
-                  className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black"
+                  className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
                 >
                   Voice Cursor
                 </li>
                 <li
                   onClick={() => {
                     handleShortcutsNavigation(700);
+                    setIsFeatures(false);
                   }}
-                  className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black"
+                  className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
                 >
                   Screen Reader
                 </li>
                 <li
                   onClick={() => {
                     handleShortcutsNavigation(1200);
+                    setIsFeatures(false);
                   }}
-                  className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black"
+                  className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
                 >
                   Screen Magnifier
                 </li>
                 <Link to={"/voice-to-text"}>
-                  <li className="hover:scale-[1.02] hover:cursor-pointer hover:border-b-[1px] border-black">
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
                     Voice to Text
                   </li>
                 </Link>
+              </ul>
+
+              <ul className="list-none flex flex-col gap-2 text-[13px]">
+                <li className="my-4 font-bold text-lg">Assets</li>
+
+                <a href={Brochure} download>
+                  <li
+                    onClick={() => {
+                      setIsFeatures(false);
+                    }}
+                    className="hover:scale-[1.02] hover:cursor-pointer hover:underline"
+                  >
+                    Brochure
+                  </li>
+                </a>
               </ul>
             </div>
 
@@ -342,100 +482,224 @@ const Navbar = ({
         )}
 
         <div className="gap-4 items-center justify-center hidden lg:flex">
-          <Link to={"/profile"}>
-            <button className="bg-bluegradientR hover:scale-105 text-white font-semibold w-fit px-4 py-3 border-none outline-none rounded-[36px]">
-              Profile
-            </button>
-          </Link>
-          <div
-            onClick={() => {
-              localStorage.removeItem("authToken");
-              window.location.reload();
-            }}
-            className=" rounded-full p-2 hover:cursor-pointer hover:scale-105 hover:bg-red-500"
-          >
-            <MdLogout className="text-2xl" />
-          </div>
-        </div>
-
-        {isSideNav ? (
-          <ul className="bg-[#1674c9] fixed top-[60px] right-0 bottom-0 z-20 px-8 py-4 flex flex-col items-center gap-4 lg:hidden">
-            <Link to={"/profile"}>
-              <li>
-                <button className=" bg-bluegradientR text-white font-semibold w-fit px-4 py-3 border-none outline-none rounded-[36px]">
+          {token ? (
+            <div className="flex items-center justify-center gap-2">
+              <Link to={"/profile"}>
+                <button className="bg-bluegradientR hover:scale-105 text-white font-semibold w-fit px-4 py-2 border-none outline-none rounded">
                   Profile
                 </button>
-              </li>
+              </Link>
+
+              <div
+                onClick={() => {
+                  localStorage.removeItem("authToken");
+                  localStorage.removeItem("loginTime");
+                  localStorage.removeItem("role");
+                  window.location.reload();
+                }}
+                className="p-2 cursor-pointer rounded-full border-[2px] font-bold border-red-500 text-red-500 hover:scale-105 hover:bg-red-500 hover:text-white"
+              >
+                <MdLogout className="text-2xl" />
+              </div>
+            </div>
+          ) : (
+            <Link to={"/login"}>
+              <button className="bg-bluegradientR hover:scale-105 text-white font-semibold w-fit px-4 py-2 border-none outline-none rounded">
+                Login
+              </button>
             </Link>
-            <ul className="flex flex-col items-center justify-center my-4 gap-4 font-semibold">
-              <Link to={"/shortcuts"}>
-                <li className="hover:scale-105">Shortcuts</li>
+          )}
+        </div>
+
+        {/* Small Screens */}
+        {isSideNav ? (
+          <ul className="z-2 w-full fixed top-[69px] border-t-[2px] border-t-black left-0 lg:hidden bg-[#ffffff] p-4 py-8 flex flex-col gap-8">
+            {token ? (
+              <>
+                <Link
+                  to={"/profile"}
+                  className="mx-auto flex items-center justify-center gap-4"
+                >
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                  >
+                    <button className="bg-bluegradientR text-white font-semibold w-fit px-4 py-2 border-none outline-none rounded">
+                      Profile
+                    </button>
+                  </li>
+
+                  <li
+                    onClick={() => {
+                      localStorage.removeItem("authToken");
+                      localStorage.removeItem("loginTime");
+                      localStorage.removeItem("role");
+                      window.location.reload();
+                    }}
+                    className="p-2 cursor-pointer w-fit rounded-full border-[2px] font-bold border-red-500 text-red-500 hover:scale-105 hover:bg-red-500 hover:text-white"
+                  >
+                    <MdLogout className="text-2xl" />
+                  </li>
+                </Link>
+              </>
+            ) : (
+              <Link to={"/login"} className="mx-auto">
+                <button
+                  onClick={() => {
+                    setIsSideNav(false);
+                  }}
+                  className="bg-bluegradientR text-white font-semibold w-fit px-4 py-2 border-none outline-none rounded"
+                >
+                  Login
+                </button>
               </Link>
-              <a href={Brochure} download>
-                <li className="hover:scale-105">Brochure</li>
-              </a>
-              <Link to={"/about"}>
-                <li className="hover:scale-105">About</li>
-              </Link>
-              <li
-                onClick={() => {
-                  setIsVisible(!isVisible);
-                }}
-                className="hover:scale-105"
-              >
-                Magnifier
-              </li>
-              <li
-                onClick={() => {
-                  setSynthActive(!synthActive);
-                  speakPageContent();
-                  if (synthActive === false) {
-                    synth.current.cancel();
-                    const utterance = new SpeechSynthesisUtterance("Stopped");
-                    synth.current.speak(utterance);
-                  }
-                }}
-                className="hover:scale-105"
-              >
-                Screen Reader
-              </li>
-              <li
-                onClick={() => {
-                  setIsCursorActive(!isCursorActive);
-                }}
-                className="hover:scale-105"
-              >
-                Keyboard Cursor
-              </li>
-              <li
-                onClick={() => {
-                  setIsListening(!isListening);
-                }}
-                className="hover:scale-105"
-              >
-                Voice Cursor
-              </li>
-            </ul>
-            <div
-              onClick={() => {
-                localStorage.removeItem("authToken");
-                window.location.reload();
-              }}
-              className=" rounded-full p-2 hover:cursor-pointer hover:scale-105 hover:bg-red-500"
-            >
-              <MdLogout className="text-2xl" />
+            )}
+
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-lg text-center">Features</h1>
+              <ul className="bg-white text-black flex flex-col gap-4 p-4">
+                <Link to={"/self-paced-courses"}>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Courses
+                  </li>
+                </Link>
+                <Link to={"/e-library"}>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Digital Library
+                  </li>
+                </Link>
+                <Link to={"/games"}>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Gamified Learning
+                  </li>
+                </Link>
+                <Link to={"/quiz"}>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Quiz
+                  </li>
+                </Link>
+                <Link to={"/dashboard"}>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Dashboard
+                  </li>
+                </Link>
+                <Link to={"/time-management"}>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Time Management
+                  </li>
+                </Link>
+                <a href={Brochure} download>
+                  <li
+                    onClick={() => {
+                      setIsSideNav(false);
+                    }}
+                    className="hover:scale-105"
+                  >
+                    Brochure
+                  </li>
+                </a>
+              </ul>
+
+              <h1 className="font-bold text-lg text-center">Shortcuts</h1>
+              <ul className="bg-white text-black flex flex-col gap-4 p-4">
+                <li
+                  onClick={() => {
+                    setIsVisible(!isVisible);
+                    setIsSideNav(false);
+                  }}
+                  className="hover:scale-105"
+                >
+                  Magnifier
+                </li>
+
+                <li
+                  onClick={() => {
+                    setSynthActive(!synthActive);
+                    speakPageContent();
+                    if (synthActive === false) {
+                      synth.current.cancel();
+                      const utterance = new SpeechSynthesisUtterance("Stopped");
+                      synth.current.speak(utterance);
+                    }
+                    setIsSideNav(false);
+                  }}
+                  className="hover:scale-105"
+                >
+                  Screen Reader
+                </li>
+
+                <li
+                  onClick={() => {
+                    setIsCursorActive(!isCursorActive);
+                    setIsSideNav(false);
+                  }}
+                  className="hover:scale-105"
+                >
+                  Keyboard Cursor
+                </li>
+
+                <li
+                  onClick={() => {
+                    setIsListening(!isListening);
+                    setIsSideNav(false);
+                  }}
+                  className="hover:scale-105"
+                >
+                  Voice Cursor
+                </li>
+              </ul>
             </div>
           </ul>
         ) : (
           ""
         )}
 
-        <GiHamburgerMenu
-          onClick={() => {
-            setIsSideNav(!isSideNav);
-          }}
-          className="lg:hidden text-3xl cursor-pointer"
-        />
+        {isSideNav ? (
+          <MdOutlineClose
+            onClick={() => {
+              setIsSideNav(false);
+            }}
+            className="lg:hidden text-3xl cursor-pointer"
+          />
+        ) : (
+          <GiHamburgerMenu
+            onClick={() => {
+              setIsSideNav(true);
+            }}
+            className="lg:hidden text-3xl cursor-pointer"
+          />
+        )}
       </nav>
     </>
   );

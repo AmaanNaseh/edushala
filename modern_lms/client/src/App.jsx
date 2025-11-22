@@ -74,6 +74,7 @@ const App = () => {
   const [isCursorActive, setIsCursorActive] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [language, setLanguage] = useState("en");
 
   const [synthActive, setSynthActive] = useState(false);
   const synth = useRef(window.speechSynthesis);
@@ -85,6 +86,31 @@ const App = () => {
     );
     synth.current.speak(utterance);
   };
+
+  useEffect(() => {
+    const checkLogout = () => {
+      const loginTime = localStorage.getItem("loginTime");
+      const token = localStorage.getItem("authToken");
+
+      if (!loginTime || !token) return;
+
+      const oneHour = 60 * 60 * 1000;
+
+      if (Date.now() - Number(loginTime) >= oneHour) {
+        // Auto logout
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("loginTime");
+        localStorage.removeItem("role");
+        window.location.href = "/login";
+      }
+    };
+
+    // Check immediately and every minute
+    checkLogout();
+    const interval = setInterval(checkLogout, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const role = localStorage.getItem("role"); // Fetch role from localStorage
@@ -124,8 +150,148 @@ const App = () => {
         speakPageContent={speakPageContent}
         synthActive={synthActive}
         setSynthActive={setSynthActive}
+        language={language}
+        setLanguage={setLanguage}
       />
 
+      <div className="min-h-screen">
+        <Routes>
+          <Route path={"/"} element={<HomePage />} />
+
+          <Route path={"/login"} element={<LoginPage />} />
+          <Route path={"/signup"} element={<SignupPage />} />
+
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <ProfilePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route path={"/shortcuts"} element={<ShortcutsPage />} />
+          <Route path={"/about"} element={<AboutPage />} />
+          <Route path={"/attributions"} element={<AttributionsPage />} />
+          <Route path={"/live-classes"} element={<LiveClassesPage />} />
+          <Route
+            path={"/digital-orbit-writer"}
+            element={<DigitalOrbitWriterPage />}
+          />
+          <Route path={"/dashboard"} element={<DashbordPage />} />
+          <Route path={"/quiz"} element={<QuizPage />} />
+          <Route path={"/time-management"} element={<TimeManagementPage />} />
+          <Route path={"/voice-to-text"} element={<VoiceToTextPage />} />
+          <Route path={"/score-analysis"} element={<ScoreAnalysisPage />} />
+          <Route path={"/cgpa-calculator"} element={<CGPACalculatorPage />} />
+          <Route path={"/download-website"} element={<WebDownloadPage />} />
+          <Route path={"/local-access"} element={<LocalAccessPage />} />
+          <Route
+            path={"/local-access/alphabets"}
+            element={<LocalAccessPage />}
+          />
+          <Route path={"/local-access/numbers"} element={<LocalAccessPage />} />
+
+          {/* LMS MERM Pages */}
+          <Route
+            path="/self-paced-courses"
+            element={
+              <PrivateRoute>
+                {userRole === "admin" ? <AdminCourses /> : <UserCourses />}
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/create-course"
+            element={
+              <PrivateRoute>
+                <CreateCourse />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/get-course/:id"
+            element={
+              <PrivateRoute>
+                <GetCourse />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/update-course/:id"
+            element={
+              <PrivateRoute>
+                <UpdateCourse />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/delete-course/:id"
+            element={
+              <PrivateRoute>
+                <DeleteCourse />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/user/course-details/:id"
+            element={
+              <PrivateRoute>
+                <CourseDetailsPage />
+              </PrivateRoute>
+            }
+          />
+
+          {/* Book MERN Pages */}
+          <Route path={"/e-library"} element={<ElibraryPage />} />
+          <Route path={"/api/book/:id"} element={<BookGet />} />
+          <Route
+            path="/api/create-book"
+            element={
+              <AdminRoute>
+                <BookCreate />
+              </AdminRoute>
+            }
+          />
+
+          <Route
+            path="/api/update-book/:id"
+            element={
+              <AdminRoute>
+                <BookUpdate />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/api/delete-book/:id"
+            element={
+              <AdminRoute>
+                <BookDelete />
+              </AdminRoute>
+            }
+          />
+
+          {/* Games */}
+
+          <Route path={"/games"} element={<GamesPage />} />
+          <Route path={"/games/sudoku"} element={<Sudoku />} />
+          <Route path={"/games/memory-match"} element={<MemoryMatch />} />
+          <Route path={"/games/maze"} element={<SolveMaze />} />
+          <Route path={"/games/bingo"} element={<Bingo />} />
+          <Route
+            path={"/games/words-color-match"}
+            element={<WordsColorMatch />}
+          />
+          <Route path={"/games/voice-match"} element={<VoiceMatch />} />
+        </Routes>
+      </div>
+
+      {/* Shortcuts */}
       <div>
         <KeyboardCursor
           isCursorActive={isCursorActive}
@@ -144,141 +310,7 @@ const App = () => {
         <Magnify isVisible={isVisible} setIsVisible={setIsVisible} />
       </div>
 
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-
-        <Route path={"/login"} element={<LoginPage />} />
-        <Route path={"/signup"} element={<SignupPage />} />
-
-        <Route
-          path="/profile"
-          element={
-            <PrivateRoute>
-              <ProfilePage />
-            </PrivateRoute>
-          }
-        />
-
-        <Route path={"/shortcuts"} element={<ShortcutsPage />} />
-        <Route path={"/about"} element={<AboutPage />} />
-        <Route path={"/attributions"} element={<AttributionsPage />} />
-        <Route path={"/live-classes"} element={<LiveClassesPage />} />
-        <Route
-          path={"/digital-orbit-writer"}
-          element={<DigitalOrbitWriterPage />}
-        />
-        <Route path={"/dashboard"} element={<DashbordPage />} />
-        <Route path={"/quiz"} element={<QuizPage />} />
-        <Route path={"/time-management"} element={<TimeManagementPage />} />
-        <Route path={"/voice-to-text"} element={<VoiceToTextPage />} />
-        <Route path={"/score-analysis"} element={<ScoreAnalysisPage />} />
-        <Route path={"/cgpa-calculator"} element={<CGPACalculatorPage />} />
-        <Route path={"/download-website"} element={<WebDownloadPage />} />
-        <Route path={"/local-access"} element={<LocalAccessPage />} />
-        <Route path={"/local-access/alphabets"} element={<LocalAccessPage />} />
-        <Route path={"/local-access/numbers"} element={<LocalAccessPage />} />
-
-        {/* LMS MERM Pages */}
-        <Route
-          path="/self-paced-courses"
-          element={
-            <PrivateRoute>
-              {userRole === "admin" ? <AdminCourses /> : <UserCourses />}
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/admin/create-course"
-          element={
-            <PrivateRoute>
-              <CreateCourse />
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/admin/get-course/:id"
-          element={
-            <PrivateRoute>
-              <GetCourse />
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/admin/update-course/:id"
-          element={
-            <PrivateRoute>
-              <UpdateCourse />
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/admin/delete-course/:id"
-          element={
-            <PrivateRoute>
-              <DeleteCourse />
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/user/course-details/:id"
-          element={
-            <PrivateRoute>
-              <CourseDetailsPage />
-            </PrivateRoute>
-          }
-        />
-
-        {/* Book MERN Pages */}
-        <Route path={"/e-library"} element={<ElibraryPage />} />
-        <Route path={"/api/book/:id"} element={<BookGet />} />
-        <Route
-          path="/api/create-book"
-          element={
-            <AdminRoute>
-              <BookCreate />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/api/update-book/:id"
-          element={
-            <AdminRoute>
-              <BookUpdate />
-            </AdminRoute>
-          }
-        />
-        <Route
-          path="/api/delete-book/:id"
-          element={
-            <AdminRoute>
-              <BookDelete />
-            </AdminRoute>
-          }
-        />
-
-        {/* Games */}
-
-        <Route path={"/games"} element={<GamesPage />} />
-        <Route path={"/games/sudoku"} element={<Sudoku />} />
-        <Route path={"/games/memory-match"} element={<MemoryMatch />} />
-        <Route path={"/games/maze"} element={<SolveMaze />} />
-        <Route path={"/games/bingo"} element={<Bingo />} />
-        <Route
-          path={"/games/words-color-match"}
-          element={<WordsColorMatch />}
-        />
-        <Route path={"/games/voice-match"} element={<VoiceMatch />} />
-      </Routes>
-
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };

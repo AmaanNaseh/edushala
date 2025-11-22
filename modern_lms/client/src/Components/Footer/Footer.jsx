@@ -31,81 +31,83 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="sticky mt-20 h-full rounded-t-[20px] lg:mx-8 px-4 bottom-0 left-0 bg-footerGradient flex flex-col gap-4 items-center justify-evenly">
-        <ul className="inline-flex gap-4 flex-wrap list-none text-white font-semibold my-6">
-          <Link to={"/attributions"}>
-            <li className="hover:scale-105">Attributions</li>
-          </Link>
-          <Link to={"/shortcuts"}>
-            <li className="hover:scale-105">Shortcuts</li>
-          </Link>
-          <a href={Brochure} download>
-            <li className="hover:scale-105">Brochure</li>
-          </a>
-          <Link to={"/about"}>
-            <li className="hover:scale-105">About</li>
-          </Link>
-          <a
-            href="https://github.com/AmaanNaseh/edushala"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li className="hover:scale-105">GitHub repo</li>
-          </a>
-        </ul>
-        <div className="my-4">
-          <div className="relative mb-8 min-h-[75px] max-w-[200px] bg-[#85b0ec] py-1 mx-auto">
-            <div
-              className="absolute left-[50%] translate-x-[-50%]"
-              id="google_translate_element"
-            ></div>
+      <footer className="mt-20 h-full rounded-t-[20px] lg:mx-8 p-4 pt-16 bottom-0 left-0 bg-footerGradient text-white">
+        <div className="flex flex-col md:flex-row gap-10 items-center justify-center md:items-start md:justify-evenly">
+          {/* Description */}
+          <div className="flex flex-col gap-4">
+            <h1 className="text-lg font-bold">EduShala</h1>
+            <p className="md:max-w-[300px] lg:max-w-[450px] text-justify">
+              Empowering learners worldwide with accessible, high-quality
+              education. Join our community and start your learning journey
+              today.
+            </p>
           </div>
-          <h1 className="text-white text-2xl md:text-3xl lg:text-4xl text-center">
-            Stay Connected
-          </h1>
-          <form
-            onSubmit={onSubmit}
-            className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 text-sm lg:text-lg lg:gap-20 my-4 md:my-8"
-          >
-            <div className="flex gap-4 items-center justify-center text-white">
-              <label htmlFor="email" className="font-bold">
-                Email
-              </label>
+
+          {/* Quick Links */}
+          <div className="flex flex-col gap-4">
+            <h1 className="text-lg font-semibold">Quick Links</h1>
+            <ul className="flex flex-col gap-4 text-sm">
+              <Link to={"/attributions"}>
+                <li className="hover:underline">Attributions</li>
+              </Link>
+              <Link to={"/shortcuts"}>
+                <li className="hover:underline">Shortcuts</li>
+              </Link>
+              <a href={Brochure} download>
+                <li className="hover:underline">Brochure</li>
+              </a>
+              <Link to={"/about"}>
+                <li className="hover:underline">About</li>
+              </Link>
+              <a
+                href="https://github.com/AmaanNaseh/edushala"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <li className="hover:underline">GitHub repo</li>
+              </a>
+            </ul>
+          </div>
+
+          {/* Stay Connected */}
+          <div className="flex flex-col gap-4">
+            <h1 className="text-lg font-semibold">Stay Connected</h1>
+            <form
+              onSubmit={onSubmit}
+              className="flex flex-col items-center justify-center text-sm gap-4 text-black"
+            >
               <input
-                className="bg-[#85b0ec] text-[12px] ml-5 w-[225px] px-4 py-2 border-[2px] border-[#3f74c2] rounded-full outline-[#3f74c2]"
+                className="px-4 py-2 w-full"
                 type="email"
                 name="email"
                 id="email"
+                placeholder="Email"
                 required
               />
-            </div>
-            <div className="flex gap-4 items-center text-white justify-center">
-              <label htmlFor="message" className="font-bold">
-                Message
-              </label>
+
               <textarea
                 name="message"
                 id="message"
-                className="resize-none text-[12px] bg-[#85b0ec] px-4 py-2 border-[2px] border-[#3f74c2] rounded-lg outline-[#3f74c2]"
+                className="resize-none px-4 py-2 w-full"
+                placeholder="Message"
                 required
               ></textarea>
-            </div>
 
-            <button
-              className="bg-transparent border-[2px] border-[#85b0ec] hover:bg-[#85b0ec] p-2 md:px-4 md:py-2 md:text-sm lg:text-lg rounded-full text-white font-bold flex items-center gap-2"
-              type="submit"
-            >
-              Send
-              <span className="text-2xl">
+              <button
+                className="rounded-full border-[2px] border-white text-white hover:bg-white hover:text-[#1674c9] text-2xl p-2"
+                type="submit"
+              >
                 <IoMdSend />
-              </span>
-            </button>
-          </form>
-          <p className="text-center text-white">{result}</p>
+              </button>
+            </form>
+            <p className="text-center">{result}</p>
+          </div>
         </div>
 
-        <p className="text-center text-white mb-2">
-          @{new Date().getFullYear()} All rights reserved
+        <div className="my-8 h-[1px] w-full lg:w-[80%] bg-white mx-auto"></div>
+
+        <p className="text-center">
+          &copy; {new Date().getFullYear()} | All rights reserved.
         </p>
       </footer>
     </>

@@ -32,6 +32,7 @@ const LoginPage = () => {
       // Store token and role
       localStorage.setItem("authToken", response.data.token);
       localStorage.setItem("role", response.data.role);
+      localStorage.setItem("loginTime", Date.now());
       setIsLoaderVisible(false);
 
       navigate("/profile");

@@ -1,5 +1,5 @@
-export const backend_API = "http://localhost:5000";
-// export const backend_API = "https://edushala-backend.onrender.com";
+// export const backend_API = "http://localhost:5000";
+export const backend_API = "https://edushala-backend.onrender.com";
 // export const attendance_backend_API = "http://localhost:8000";
 export const attendance_backend_API = "/local-access";
 // export const sign_language_backend_API = "http://localhost:8001";

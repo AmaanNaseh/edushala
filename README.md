@@ -26,6 +26,12 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ---
 
+## Tech stack
+
+![Image](https://github.com/user-attachments/assets/7090647d-8d7d-4654-9c76-d3cd7592ba89)
+
+---
+
 ## HackJMI25 Winners
 
 - <a href="https://hackjmi2025.devfolio.co/projects?show_winners=true" target="_blank" > 1st Prize </a>
@@ -53,12 +59,6 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 - Offline Installation
 - Accessibility & Shortcuts : Bi-Lingual (Hindi/English), Smart Cursor Navigation, Screen Reader, Screen Magnifier, Voice to Text & Digital Orbit Writer
 - EduTypeVision : Hardware for blind people to access our website easily & use our digital orbit writer
-
----
-
-## Tech stack
-
-![Image](https://github.com/user-attachments/assets/7090647d-8d7d-4654-9c76-d3cd7592ba89)
 
 ---
 

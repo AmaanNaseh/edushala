@@ -41,6 +41,52 @@ import SolveMazeLogo from "../Assets/HomePage/SolveMaze.png";
 import SudokuLogo from "../Assets/HomePage/Sudoku.png";
 import { HeroSection } from "../Components/HeroSection/HeroSection";
 
+// --------------------------------------
+// REUSABLE CARD COMPONENT
+// --------------------------------------
+const Card = ({ img, title, isDarkMode, onClick, link, external }) => {
+  const cardContent = (
+    <div
+      onClick={onClick}
+      className={`group min-h-[240px] rounded-2xl p-6 cursor-pointer 
+        flex flex-col items-center justify-center text-center
+        transition-all duration-300
+        ${
+          isDarkMode
+            ? "bg-[#1b4f9b] border border-white/20 shadow-md shadow-white/10 hover:shadow-xl hover:shadow-white/20"
+            : "bg-white border border-gray-200 shadow-md shadow-blue-100/40 hover:shadow-2xl hover:shadow-blue-200/60"
+        }
+        hover:-translate-y-2`}
+    >
+      <div
+        className="w-[90px] h-[90px] rounded-xl bg-white/40 backdrop-blur-md shadow-inner 
+          flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+      >
+        <img src={img} alt="icon" className="w-[70%] h-[70%] object-contain" />
+      </div>
+
+      <h1
+        className="text-lg md:text-xl font-semibold mt-6 
+          group-hover:text-blue-600 transition-colors duration-300"
+      >
+        {title}
+      </h1>
+    </div>
+  );
+
+  if (link) {
+    return external ? (
+      <a href={link} target="_blank" rel="noreferrer">
+        {cardContent}
+      </a>
+    ) : (
+      <Link to={link}>{cardContent}</Link>
+    );
+  }
+
+  return cardContent;
+};
+
 const HomePage = ({ isDarkMode }) => {
   const navigate = useNavigate();
 
@@ -58,189 +104,76 @@ const HomePage = ({ isDarkMode }) => {
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           What we offer
         </h1>
+
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-8">
-          <Link to={"/self-paced-courses"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img
-                  src={SelfPacedCoursesLogo}
-                  alt="image"
-                  className="w-full"
-                />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Self Paced Courses
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/e-library"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={DigitalLibraryLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Digital Library
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/games"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={GameLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Gamified Learning
-              </h1>
-            </div>
-          </Link>
+          <Card
+            img={SelfPacedCoursesLogo}
+            title="Self Paced Courses"
+            link="/self-paced-courses"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={DigitalLibraryLogo}
+            title="Digital Library"
+            link="/e-library"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={GameLogo}
+            title="Gamified Learning"
+            link="/games"
+            isDarkMode={isDarkMode}
+          />
 
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/10/20250128103655-FIOLFGT8.json"
-          >
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={AIDoubtSolverLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                AI Doubt Solver
-              </h1>
-            </div>
-          </a>
-          <a
-            href={`${attendance_backend_API}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img
-                  src={AttendanceSystemLogo}
-                  alt="image"
-                  className="w-full"
-                />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Digital Attendance System
-              </h1>
-            </div>
-          </a>
-          <Link to={"/live-classes"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={LiveClassesLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Live Classes
-              </h1>
-            </div>
-          </Link>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={`${question_generator_API}`}
-          >
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={ExamPreparationLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Exam Preparation Assistance
-              </h1>
-            </div>
-          </a>
+          <Card
+            img={AIDoubtSolverLogo}
+            title="AI Doubt Solver"
+            link="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/10/20250128103655-FIOLFGT8.json"
+            external
+            isDarkMode={isDarkMode}
+          />
 
-          <Link to={"/score-analysis"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={ScoreAnalysisLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Score Analysis
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/cgpa-calculator"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={CGPACalculatorLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                CGPA Calculator
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/download-website"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={OfflineLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Offline Access
-              </h1>
-            </div>
-          </Link>
+          <Card
+            img={AttendanceSystemLogo}
+            title="Digital Attendance System"
+            link={attendance_backend_API}
+            external
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={LiveClassesLogo}
+            title="Live Classes"
+            link="/live-classes"
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={ExamPreparationLogo}
+            title="Exam Preparation Assistance"
+            link={question_generator_API}
+            external
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={ScoreAnalysisLogo}
+            title="Score Analysis"
+            link="/score-analysis"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={CGPACalculatorLogo}
+            title="CGPA Calculator"
+            link="/cgpa-calculator"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={OfflineLogo}
+            title="Offline Access"
+            link="/download-website"
+            isDarkMode={isDarkMode}
+          />
         </div>
       </div>
 
@@ -249,75 +182,35 @@ const HomePage = ({ isDarkMode }) => {
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Adaptive Learning Platform
         </h1>
+
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(425px,_1fr))] gap-8">
-          <Link to={"/dashboard"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={DashboardLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Personalized Dashboard
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/quiz"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={QuizLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Test your Strengths and Weaknesses
-              </h1>
-            </div>
-          </Link>
-          <a href={`${quiz_backend_API}`} target="_blank" rel="noreferrer">
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img
-                  src={QuizScoreAnalyzerLogo}
-                  alt="image"
-                  className="w-full"
-                />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Quiz Score Analyzer
-              </h1>
-            </div>
-          </a>
-          <Link to={"/time-management"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={TimeManagementLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Personalized Time Management
-              </h1>
-            </div>
-          </Link>
+          <Card
+            img={DashboardLogo}
+            title="Personalized Dashboard"
+            link="/dashboard"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={QuizLogo}
+            title="Test your Strengths and Weaknesses"
+            link="/quiz"
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={QuizScoreAnalyzerLogo}
+            title="Quiz Score Analyzer"
+            link={quiz_backend_API}
+            external
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={TimeManagementLogo}
+            title="Personalized Time Management"
+            link="/time-management"
+            isDarkMode={isDarkMode}
+          />
         </div>
       </div>
 
@@ -326,113 +219,50 @@ const HomePage = ({ isDarkMode }) => {
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Special Education for Disabled Students
         </h1>
+
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(425px,_1fr))] gap-8">
-          <a
-            href={`${sign_language_backend_API}/alphabets`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={AlphabetsLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Learn Sign Language (Alphabets)
-              </h1>
-            </div>
-          </a>
-          <a
-            href={`${sign_language_backend_API}/numbers`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={NumbersLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Learn Sign Language (Numbers)
-              </h1>
-            </div>
-          </a>
-          <Link to={"/digital-orbit-writer"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={OrbitWriterLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Digital Orbit Writer (Blind Assistance)
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/voice-to-text"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={VoiceToTextLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Voice To Text
-              </h1>
-            </div>
-          </Link>
-          <div
-            onClick={() => {
-              handleShortcutsNavigation(100);
-            }}
-            className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-              isDarkMode
-                ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-            }`}
-          >
-            <div className="w-[100px] h-[100px]">
-              <img src={CursorLogo} alt="image" className="w-full" />
-            </div>
-            <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-              Smart Cursor Navigation
-            </h1>
-          </div>
-          <div
-            onClick={() => {
-              handleShortcutsNavigation(700);
-            }}
-            className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-              isDarkMode
-                ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-            }`}
-          >
-            <div className="w-[100px] h-[100px]">
-              <img src={ScreenReaderLogo} alt="image" className="w-full" />
-            </div>
-            <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-              Screen Reader
-            </h1>
-          </div>
+          <Card
+            img={AlphabetsLogo}
+            title="Learn Sign Language (Alphabets)"
+            link={`${sign_language_backend_API}/alphabets`}
+            external
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={NumbersLogo}
+            title="Learn Sign Language (Numbers)"
+            link={`${sign_language_backend_API}/numbers`}
+            external
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={OrbitWriterLogo}
+            title="Digital Orbit Writer (Blind Assistance)"
+            link="/digital-orbit-writer"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={VoiceToTextLogo}
+            title="Voice To Text"
+            link="/voice-to-text"
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={CursorLogo}
+            title="Smart Cursor Navigation"
+            isDarkMode={isDarkMode}
+            onClick={() => handleShortcutsNavigation(100)}
+          />
+
+          <Card
+            img={ScreenReaderLogo}
+            title="Screen Reader"
+            isDarkMode={isDarkMode}
+            onClick={() => handleShortcutsNavigation(700)}
+          />
         </div>
       </div>
 
@@ -441,120 +271,51 @@ const HomePage = ({ isDarkMode }) => {
         <h1 className="text-center bg-bluegradientR bg-clip-text text-transparent italic font-bold text-2xl md:text-4xl lg:text-5xl my-4 md:my-7">
           Special Exercises for Neurodivergent Students
         </h1>
+
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(425px,_1fr))] gap-8">
-          <Link to={"/games/sudoku"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={SudokuLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Brain Strategical Exercise (Sudoku)
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/games/memory-match"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={MemoryMatchLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Visual Exercise (Memory Match)
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/games/maze"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={SolveMazeLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Brain Strategical Exercise (Maze)
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/games/bingo"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={BingoLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Brain Strategical Exercise (Bingo)
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/games/words-color-match"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={WordsColorMatchLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Visual Exercise (Words Color Match)
-              </h1>
-            </div>
-          </Link>
-          <Link to={"/games/voice-match"}>
-            <div
-              className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-                isDarkMode
-                  ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                  : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-              }`}
-            >
-              <div className="w-[100px] h-[100px]">
-                <img src={VoiceMatchLogo} alt="image" className="w-full" />
-              </div>
-              <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-                Auditory Exercise (Voice Match)
-              </h1>
-            </div>
-          </Link>
-          <div
-            onClick={() => {
-              handleShortcutsNavigation(1200);
-            }}
-            className={`min-h-[225px] hover:scale-105 cursor-pointer rounded-[10px] py-4 flex flex-col items-center justify-center ${
-              isDarkMode
-                ? "bg-[#1764c9] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#f2f8ff]/40"
-                : "bg-[#f2f8ff] border-[#f2f8ff] border-[2px] shadow-lg shadow-[#4A9DFF]/40"
-            }`}
-          >
-            <div className="w-[100px] h-[100px]">
-              <img src={ScreenMagnifierLogo} alt="image" className="w-full" />
-            </div>
-            <h1 className="text-xl md:text-2xl text-center font-bold my-4 mx-4">
-              Screen Magnifier
-            </h1>
-          </div>
+          <Card
+            img={SudokuLogo}
+            title="Brain Strategical Exercise (Sudoku)"
+            link="/games/sudoku"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={MemoryMatchLogo}
+            title="Visual Exercise (Memory Match)"
+            link="/games/memory-match"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={SolveMazeLogo}
+            title="Brain Strategical Exercise (Maze)"
+            link="/games/maze"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={BingoLogo}
+            title="Brain Strategical Exercise (Bingo)"
+            link="/games/bingo"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={WordsColorMatchLogo}
+            title="Visual Exercise (Words Color Match)"
+            link="/games/words-color-match"
+            isDarkMode={isDarkMode}
+          />
+          <Card
+            img={VoiceMatchLogo}
+            title="Auditory Exercise (Voice Match)"
+            link="/games/voice-match"
+            isDarkMode={isDarkMode}
+          />
+
+          <Card
+            img={ScreenMagnifierLogo}
+            title="Screen Magnifier"
+            isDarkMode={isDarkMode}
+            onClick={() => handleShortcutsNavigation(1200)}
+          />
         </div>
       </div>
     </>

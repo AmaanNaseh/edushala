@@ -529,7 +529,7 @@ const Navbar = ({
 
         {/* Small Screens */}
         {isSideNav ? (
-          <ul className="z-2 w-full fixed top-[69px] border-t-[2px] border-t-black left-0 lg:hidden bg-[#ffffff] p-4 py-8 flex flex-col gap-8">
+          <ul className="z-2 w-full fixed top-[69px] border-t-[2px] border-t-black left-0 lg:hidden bg-[#ffffff] text-black p-4 py-8 flex flex-col gap-8">
             {token ? (
               <>
                 <Link
@@ -574,7 +574,7 @@ const Navbar = ({
 
             <div className="flex flex-col gap-2">
               <h1 className="font-bold text-lg text-center">Features</h1>
-              <ul className="bg-white text-black flex flex-col gap-4 p-4">
+              <ul className="flex flex-col gap-2 p-4">
                 <Link to={"/self-paced-courses"}>
                   <li
                     onClick={() => {
@@ -648,7 +648,7 @@ const Navbar = ({
               </ul>
 
               <h1 className="font-bold text-lg text-center">Shortcuts</h1>
-              <ul className="bg-white text-black flex flex-col gap-4 p-4">
+              <ul className="flex flex-col gap-2 p-4">
                 <li
                   onClick={() => {
                     setIsVisible(!isVisible);

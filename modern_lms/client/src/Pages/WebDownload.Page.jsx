@@ -24,7 +24,7 @@ const WebDownloadPage = () => {
 
         <div className="flex flex-col items-center justify-center md:flex-row flex-wrap gap-10 md:gap-20 lg:gap-40">
           <div className="flex flex-col items-center justify-center gap-8">
-            <div className="w-[200px]">
+            <div className="w-[200px] bg-white p-2">
               <img src={DesktopLogo} alt="Desktop" className="w-full" />
             </div>
             <div className="flex flex-col items-center gap-4 max-w-[300px]">
@@ -45,7 +45,7 @@ const WebDownloadPage = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-8">
-            <div className="w-[100px]">
+            <div className="w-[100px] bg-white p-2">
               <img src={AndroidPhoneLogo} alt="Android" className="w-full" />
             </div>
             <div className="flex flex-col items-center gap-4 max-w-[300px]">
@@ -60,7 +60,7 @@ const WebDownloadPage = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-8">
-            <div className="w-[100px]">
+            <div className="w-[100px] bg-white p-2">
               <img src={iOSPhoneLogo} alt="iOS" className="w-full" />
             </div>
             <div className="flex flex-col items-center gap-4 max-w-[300px]">

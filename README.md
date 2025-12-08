@@ -8,7 +8,7 @@ A One Stop AI-Enabled Free Adaptive Educational Platform for Everyone
 
 ## Live Website:
 
-<a href="https://edushala.vercel.app" target="_blank" >![Image](https://github.com/user-attachments/assets/00c0deb9-de02-4480-8058-c54dae53e2cc) https://edushala.vercel.app</a> OR <a href="https://www.edushala.tech" target="_blank" >www.edushala.tech</a>
+<a href="https://edushala.vercel.app" target="_blank" >![Image](https://github.com/user-attachments/assets/00c0deb9-de02-4480-8058-c54dae53e2cc) edushala.vercel.app</a> OR <a href="https://www.edushala.tech" target="_blank" >www.edushala.tech</a>
 
 ---
 
